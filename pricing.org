@@ -1,51 +1,55 @@
 #+TITLE: Pricing - DamageBDD
 
 #+INCLUDE: "header.org"
-* Pricing Plans for damageBDD.com
+* Pricing Plans for DamageBDD
 
-DamageBDD is a registered business entity in Australia, holding an
-Australian Business Number (ABN) . 
+At DamageBDD, we make it easy for you to pay using Bitcoin. Once you
+have signed up for an [[./account.org][account]], you will receive a
+bitcoin address to send your payment to. This payment will fund the
+execution of your tests and give you access to our premium features.
+
+To access the premium features of DamageBDD, please start by creating
+an [[./account.org][Account]]. Upon signup, you will be given a
+certain amount of free credits. Once you exhaust the free credits, you
+will have the option to top up your account using bitcoin.
 
 
 #+BEGIN_EXPORT html
 
 <div style="border: 1px solid #333; padding: 10px; margin: 10px 0; background-color: #f9f9f9;">
   <strong>
-  Test it out on the bitcoin testnet!
+  Experience the power of Damagebdd on the bitcoin testnet!
 </strong>
 <br>
  Damagebdd is currently available for testing all features on the testnet.
- Simply register to receive a bitcoin testnet payment address.
- Test bitcoins can be the sent to the payment address from a faucet like <a href="https://testnet-faucet.com/">this</a>.
+ Register now to receive a bitcoin testnet payment address and start exploring the possibilities.
+ Test bitcoins can be sent to your payment address from a reliable faucet like <a href="https://testnet-faucet.com/">this one</a>.
 </div>
 #+END_EXPORT
  
 
-* Accepted Payment Methods
+Our pricing model is designed to be flexible and convenient for our
+users. With DamageBDD, you only pay for what you use, with
+pay-as-you-go pricing. This means that you can simply send any amount
+of bitcoin that will be sufficient to run your tests. However, please
+keep in mind the resources and complexity involved in your tests when
+determining the amount to send.
 
-- Accepts payments in Bitcoin (BTC)
+We calculate pricing based on the number of steps and their
+implementations. Each step is individually priced based on the
+resources used and complexity involved. If you run steps concurrently,
+each execution will count against the total number of step
+executions. For example, running one step 10 times will deduct 10
+Damage Units from your balance.
 
-* Payment plans
-
-DamageBDD uses Bitcoin for account payments.
-
-Use the bitcoin address sent to your account email to send some bitcoin to fund execution of tests and to use paid features of DamageBDD.
-
-Since DamageBDD runs on a pay as you go model, simply send any amount that will be sufficient to run your tests, but take into consdideration that smaller tha.
-
-DamageBdd's pricing is per step and step implementation based.
-
-Which means each step is priced according to the usage of resources
-and complexity.
-
-Running steps concurrently will count against each step excution, ie
-
-running 1 step 10 times will deduct 10 Units.
-
-Pricing is subject to change as the product features evolve, please refer back to this page for updates.
+Please note that pricing may be subject to change as we continue to
+update and improve our product. We recommend checking this page
+regularly for any updates.
 
 ** Step Based Pricing
 
+Here is a breakdown of our step-based pricing in Satoshis (sats) per
+step execution:
 
 | Step           | Price in Sats                       |
 |----------------|------------------------------------:|
@@ -53,47 +57,20 @@ Pricing is subject to change as the product features evolve, please refer back t
 | Selenium Step  | 1 Sat per 50,000 Step executions    |
 | Appium Step    | 1 Sat per 1000 Step executions      |
 
+We hope this pricing information is clear and easy to understand. If
+you have any further questions or need assistance, please don't
+hesitate to contact our support team.
 
-** Create an account to start using paid features
-
-Creating an account to start using paid features is easy.
-
-To create an account you must first have a `Refund Address`.
-
-The `Refund Address` is where unused bitcoin can be refunded back to you.
-
-Make sure you have control over the `Refund Address`.
-
-Once you have a refund address simply call the `accounts/create` endpoint.
-
-
-[[./register-individual.html][Individual Registration Form]]
-
-or
-
-
-[[./register-business.html][Business Registration Form]]
-
-To understand bitcoin refunds better please refer bitcoin guide on [[https://developer.bitcoin.org/devguide/payment_processing.html#issuing-refunds][issuing refund]].
-
-To review DamageBDD's pricing and execution [[https://github.com/jagguli/DamageBDD/tree/master/contracts][contracts]].
-
-** Issuing a refund
-
-Withdrawing unused funds back into the refund address is easy.
-
-#+BEGIN_EXPORT html
-<pre>
-<code class="language-shell">
-    curl -s 'https://run.damagebdd.com/accounts/refund?account=$CONTRACT_ADDRESS' |jq
-</code>
-</pre>
-#+END_EXPORT
 
 ** Consultation Pricing
 
-Easiest way to get started with DamageBDD in your team's work flow quickly, book a consultation with DamageBDD. 
+Easiest way to get started with DamageBDD in your team's work flow
+quickly, book a consultation with DamageBDD.
 
 #+BEGIN_EXPORT html
 <a href="https://calendly.com/melit-stevenjoseph/15min">Schedule Call with DamageBDD Now</a>
 #+END_EXPORT
+
+
+DamageBDD is a legally registered business entity in Australia,
+ABN: 39865763306.

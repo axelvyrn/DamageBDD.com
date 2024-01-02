@@ -146,8 +146,16 @@ Benefits to organizational roles through the aid of the DamageBDD platform.
 |                 |                                                                                |
 
 * Use Cases
-- Smartcontract audit steps
-- 
+
+Below are only scratching the surface of possibilities that can be
+covered using BDD workflow on DamageBDD.
+
+- Web2 application server and browser performance, quality and availability
+- Web3 Smartcontract continuous auditing.
+- Infrastructure availability expectation management.
+- General Process Execution orchestration through custom Step implementations.
+- General Behaviour verification based on custom input sources.
+
 * References
 
 - [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]

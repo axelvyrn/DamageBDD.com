@@ -1,12 +1,10 @@
 #+Title: Damagebdd - User Manual
 
 #+INCLUDE: "header.org"
-#+OPTIONS: toc:5          (only include two levels in TOC)
 * User Manual
 
-** Http Interface
 
-To get help on using the http interface
+To get quick help anytime:
 
     curl https://run.damagebdd.com/help
 

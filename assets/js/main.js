@@ -42,5 +42,17 @@
 		}
 
 	}
+	document.addEventListener("DOMContentLoaded", function() {
+		var menuItems = document.querySelectorAll("#mainmenu li");
+
+		menuItems.forEach(function(item) {
+			var link = item.querySelector("a");
+			console.log("loc " , link.getAttribute("href")); 
+			console.log("path " , window.location.pathname); 
+			if (link.getAttribute("href") === window.location.pathname) {
+				item.classList.add("active"); // Add the "active" class if the href matches the current URL path
+			}
+		});
+	});
 
 })(window, document, undefined);
