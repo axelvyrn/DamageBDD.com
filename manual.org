@@ -1,0 +1,26 @@
+#+Title: Damagebdd - User Manual
+
+#+INCLUDE: "header.org"
+#+OPTIONS: toc:5          (only include two levels in TOC)
+* User Manual
+
+** Http Interface
+
+To get help on using the http interface
+
+    curl https://run.damagebdd.com/help
+
+    
+** Available Steps
+
+Step reference can be found [[./steps.html][here.]]
+
+To get the most current list of step implementations:
+
+    curl https://run.damagebdd.com/steps.yaml
+    
+** Scheduling
+
+** Reporting
+
+** Integrations

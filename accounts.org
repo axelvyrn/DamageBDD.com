@@ -1,0 +1,81 @@
+#+Title: Damagebdd - Accounts
+
+#+INCLUDE: "header.org"
+#+OPTIONS: toc:5          (only include two levels in TOC)
+
+** Create an Account
+
+In order to unlock the full power of DamageBDD create and fund an account.
+
+To create an account you must first have a `Refund Address`.
+
+The `Refund Address` is where unused bitcoin can be refunded back to you.
+
+Make sure you have control over the `Refund Address`.
+
+Use this form to create an account
+
+
+[[./register-individual.html][Individual Registration Form]]
+
+or
+
+[[./register-business.html][Business Registration Form]]
+
+Or using cURL:
+
+
+#+BEGIN_EXPORT html
+<pre>
+<code class="language-shell">
+    curl https://run.damagebdd.com/accounts/create \
+    -H 'Content-Type: application/x-yaml' \
+    --data @- << EOF
+      ---
+      refund_address: "mohjSavDdQYHRYXcS3uS6ttaHP8amyvX78"
+      email: "account@somecorp.com"
+    EOF
+</code>
+</pre>
+#+END_EXPORT
+
+You will receive a confirmation link in your email, click on the link and set a password.
+
+
+Once you have set a password you can get the account balance and bitcoin payment address using
+
+#+BEGIN_EXPORT html
+<pre>
+<code class="language-shell">
+    curl https://run.damagebdd.com/accounts/balance?account=xxx
+</code>
+</pre>
+#+END_EXPORT
+
+where `xxx` is replaced with the account id (provided in confirmation email)
+
+To use the premium features top up the bitcoin address with some sats
+and they will be used to fund the execution of the test and support
+the development of the product.
+
+*** Pricing
+
+Please refer to [[./pricing.html][pricing page]] for pricing.
+
+*** Refunds
+
+To understand bitcoin refunds better please refer bitcoin guide on [[https://developer.bitcoin.org/devguide/payment_processing.html#issuing-refunds][issuing refund]].
+
+To review DamageBDD's pricing and execution [[https://github.com/jagguli/DamageBDD/tree/master/contracts][contracts]].
+
+** Issuing a refund
+
+Withdrawing unused funds back into the refund address is easy.
+
+#+BEGIN_EXPORT html
+<pre>
+<code class="language-shell">
+    curl -s 'https://run.damagebdd.com/accounts/refund?account=$CONTRACT_ADDRESS' |jq
+</code>
+</pre>
+#+END_EXPORT

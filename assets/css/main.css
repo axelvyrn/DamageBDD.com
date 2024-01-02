@@ -1,0 +1,83 @@
+.header h1 {
+    font-size: 4em;
+}
+.header a {
+    display: flex; align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+.header {
+    display: flex; align-items: center;
+}
+
+.header img { margin-right: 10px; } 
+
+body .title { display: none; }
+
+body {
+    max-width: 800px;
+    margin: 0 auto !important; 
+	float: none !important; 
+}
+
+.footer {
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    border-top: 1px solid #eee;
+    font-size: 9px;
+    margin-top: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-right: 1px solid #e0e0e0; /* Light grey border */
+}
+
+th:last-child, td:last-child {
+    border-right: none; /* Remove border for the last column */
+}
+
+form {
+     border: 1px solid #ccc;
+     padding: 15px;
+     margin: 10px 0;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input, textarea, button {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box; /* Make sure padding doesn't affect the width */
+  margin-bottom: 15px;
+}
+button {
+  width: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 20px; /* Adjust the spacing between menu items as needed */
+}
+
+a {
+    text-decoration: none;
+    color: #333; /* Change the link color to your preference */
+}
+

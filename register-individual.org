@@ -1,0 +1,52 @@
+#+TITLE: Individual Registration - DamageBDD
+
+
+#+INCLUDE: "header.org"
+* Register as individual customer.
+To register as an individual please fill out this form.
+
+** Html Form Input
+#+BEGIN_EXPORT html
+<form id="kycForm" action="/accounts/create" method="post">
+  <input type="hidden" name="csrf_token" value="your_csrf_token_here">
+  
+  <label for="full_name">Full Name:</label>
+  <input type="text" id="full_name" name="full_name" required><br><br>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" required><br><br>
+
+  <!--<label for="dateOfBirth">Date of Birth:</label>
+  <input type="date" id="dateOfBirth" name="dateOfBirth" required><br><br>
+
+  <label for="nationality">Nationality:</label>
+  <input type="text" id="nationality" name="nationality" required><br><br>
+
+  -->
+  <label for="address">Address:</label>
+  <textarea id="address" name="address" required></textarea><br><br>
+  <label for="refund_address">Refund Address:</label>
+  <input type="text" id="refund_address" name="refund_address" required><br><br>
+
+  <!--<label for="idDocument">ID Document (Passport, Driver’s License, etc.):</label>
+  <input type="file" id="idDocument" name="idDocument" required><br><br>-->
+
+  <button type="submit">Submit</button>
+</form>
+#+END_EXPORT
+** Using Curl
+#+BEGIN_EXPORT html
+<pre>
+
+<code class="language-shell">
+    curl -s 'https://run.damagebdd.com/accounts/create?refund_address=$REFUND_ADDRESS' \
+        -H 'Content-Type: application/x-yaml' \
+        -d '
+---
+customerType: "Individual"
+fullName: "John Doe"
+address: "123 Main Street, Sydney, NSW"
+email: "john.doe@example.com"
+'
+</code>
+</pre>
+#+END_EXPORT

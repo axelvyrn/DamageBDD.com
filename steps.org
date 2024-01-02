@@ -1,0 +1,22 @@
+#+Title: Damagebdd - Steps Manual
+
+#+INCLUDE: "header.org"
+#+OPTIONS: toc:5          (only include two levels in TOC)
+
+#+BEGIN_SRC python :exports results :results value html
+  import yaml
+  from yaml.loader import SafeLoader
+  def render_step(step_data):
+      results = []
+      for group, steps in step_data.items():
+          results.append(f"<h4>{group}</h4>")
+
+          for step, args in steps.items():
+              results.append(f"<h5>{step}</h5>")
+              if not args:continue 
+              results.append(f"<p>{args.get('help', '')}</p>")
+              results.append(f"<code>{args.get('example', '')}</code>")
+      return "<br>".join(results)
+
+  return render_step(yaml.load(open("steps.yaml"), SafeLoader))
+#+END_SRC

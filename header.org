@@ -1,0 +1,28 @@
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+HTML_HEAD: <script async src='https://www.googletagmanager.com/gtag/js?id=G-5QG625RHB7'></script>
+#+HTML_HEAD: <script src='assets/js/main.js'></script>
+#+HTML_HEAD: <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'><style type="text/css"> body { font-family: 'Roboto', sans-serif; } </style>
+#+HTML_HEAD: <script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js'></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/default.min.css'>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='assets/css/main.css'/>
+#+HTML_HEAD: <script src='assets/js/gherkin.js'></script>
+#+HTML_HEAD: <script>hljs.highlightAll();</script>
+#+BEGIN_EXPORT html
+<div class="header">
+  <a href="/"><img src="assets/img/damagelogo.png" alt="Logo" height="130px"/>
+  <h1>DamageBDD</h1>
+  </a>
+  <br>
+  <!--
+  <ul>
+        <li><a href="/#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    -->
+</div>
+
+#+END_EXPORT
