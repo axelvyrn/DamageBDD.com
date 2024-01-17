@@ -13,11 +13,52 @@
 
 .header img { margin-right: 10px; } 
 
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header li {
+    margin: 10px; /* Adjust the spacing between menu items as needed */
+}
+
+.header a {
+    text-decoration: none;
+    color: #333; /* Change the link color to your preference */
+}
+
+.header {
+    align-items: center;
+}
 body .title { display: none; }
 
-body {
-    max-width: 800px;
-    margin: 0 auto !important; 
+#preamble{
+    width: 100%;
+    height: calc(84vh - 100px);
+    float:left;
+    z-index: -110;
+}
+.preamble{
+    font-size: 2em;
+    float: left;
+    margin-top:calc(34vh - 100px);
+    margin-left:calc(4vh - 10px);
+}
+
+#postamble{
+    width: 100%;
+    height: 600px;
+    float:left;
+}
+.content{
+    max-width: 1800px;
+     margin: auto;
+  width: 50%;
+  padding: 10px;
 	float: none !important; 
 }
 
@@ -66,51 +107,32 @@ button {
   width: auto;
 }
 
-.header ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+#mainmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.header li {
-    margin: 10px; /* Adjust the spacing between menu items as needed */
+#mainmenu li {
+  margin-right: 20px;
 }
 
-.header a {
-    text-decoration: none;
-    color: #333; /* Change the link color to your preference */
+#mainmenu li a {
+  text-decoration: none;
+  color: black;
 }
-
-  .header {
-    border-bottom: 1px solid black;
-    width: 100%;
-    align-items: center;
-  }
-
-  #mainmenu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-bottom: 1px solid black;
-  }
-
-  #mainmenu li {
-    margin-right: 20px;
-  }
-
-  #mainmenu li a {
-    text-decoration: none;
-    color: black;
-  }
 
 #mainmenu .active {
   /* Apply your desired styling for the active menu item */
   font-weight: bold;
   color: red;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/js/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }

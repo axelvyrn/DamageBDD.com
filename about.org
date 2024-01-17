@@ -1,7 +1,7 @@
 #+TITLE: About - DamageBDD
 
 #+INCLUDE: "header.org"
-About DamageBDD
+* About DamageBDD
 
 Welcome to DamageBDD! We are a cutting-edge technology company founded
 by Steven, an experienced developer and a passionate
@@ -34,6 +34,6 @@ Join us on this exciting journey as we revolutionize the way software
 is developed and maintained. With DamageBDD, you can ensure the
 highest standards of performance, quality, and availability for your
 applications. Experience the power of BDD without the complexity
-\342\200\223 it's just a command away!
+it's just a command away!
 
 Welcome to DamageBDD - where simplicity meets power!

@@ -4,12 +4,12 @@
 * Pricing Plans for DamageBDD
 
 At DamageBDD, we make it easy for you to pay using Bitcoin. Once you
-have signed up for an [[./account.org][account]], you will receive a
+have signed up for an [[./accounts.org][account]], you will receive a
 bitcoin address to send your payment to. This payment will fund the
 execution of your tests and give you access to our premium features.
 
 To access the premium features of DamageBDD, please start by creating
-an [[./account.org][Account]]. Upon signup, you will be given a
+an [[./accounts.org][Account]]. Upon signup, you will be given a
 certain amount of free credits. Once you exhaust the free credits, you
 will have the option to top up your account using bitcoin.
 
