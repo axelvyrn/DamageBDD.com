@@ -40,6 +40,20 @@
 					});
 			});
 		}
+		VANTA.GLOBE({
+			el: "#preamble",
+			mouseControls: true,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: 200.00,
+			minWidth: 200.00,
+			scale: 1.00,
+			size: 1.50,
+			scaleMobile: 1.00,
+			color: 0x2b04,
+			color2: 0x2d6e45,
+			backgroundColor: 0xffffff
+		})
 
 	}
 	document.addEventListener("DOMContentLoaded", function() {

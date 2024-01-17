@@ -1,48 +1,27 @@
 #+Title: Damagebdd - Accounts
 
 #+INCLUDE: "header.org"
-#+OPTIONS: toc:5          (only include two levels in TOC)
 
 ** Create an Account
 
-In order to unlock the full power of DamageBDD create and fund an account.
+To fully utilize the capabilities of DamageBDD, you need to create and fund an account.
 
-To create an account you must first have a `Refund Address`.
+To create an account, you must first have a `Refund Address`, which is
+the address where unused bitcoin can be refunded back to you. It is
+important to ensure that you have control over this address.
 
-The `Refund Address` is where unused bitcoin can be refunded back to you.
-
-Make sure you have control over the `Refund Address`.
-
-Use this form to create an account
+Use the following forms to create an account:
 
 
-[[./register-individual.html][Individual Registration Form]]
-
-or
-
-[[./register-business.html][Business Registration Form]]
-
-Or using cURL:
+- [[/register-individual.html][Individual Registration Form]]
+- [[/register-business.html][Business Registration Form]]
 
 
-#+BEGIN_EXPORT html
-<pre>
-<code class="language-shell">
-    curl https://run.damagebdd.com/accounts/create \
-    -H 'Content-Type: application/x-yaml' \
-    --data @- << EOF
-      ---
-      refund_address: "mohjSavDdQYHRYXcS3uS6ttaHP8amyvX78"
-      email: "account@somecorp.com"
-    EOF
-</code>
-</pre>
-#+END_EXPORT
+After submitting the form, you will receive a confirmation link in
+your email. Click on the link and set a password for your account.
 
-You will receive a confirmation link in your email, click on the link and set a password.
-
-
-Once you have set a password you can get the account balance and bitcoin payment address using
+Once you have set a password, you can check your account balance and
+bitcoin payment address using the following command:
 
 #+BEGIN_EXPORT html
 <pre>
