@@ -1,6 +1,7 @@
 #+Title: Damagebdd - User Manual
 
 #+INCLUDE: "header.org"
+
 * User Manual
 
 
@@ -8,17 +9,136 @@ To get quick help anytime:
 
     curl https://run.damagebdd.com/help
 
+** cURL Quick Start!
+
+*** Create Account
+
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl 'https://run.damagebdd.com/accounts/create' -H 'Content-Type: application/x-yaml' -d '
+    ---
+    email: "john.doe@example.com"
+    '
+</code>
+#+END_EXPORT
     
+Check email for confirmation and set up a password.
+Read more about account creation [[./accounts.org][here]].
+    
+*** Get a Bearer Token
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl -X POST \
+        'https://run.damagebdd.com/auth/' \
+        -H 'Content-Type: application/x-yaml' -d '
+    ---
+    grant_type: "password"
+    username: "your damagebdd username/email"
+    password: "your damagebdd password"
+    scope: "basic"
+    '
+</code>
+#+END_EXPORT
+
+*** Run a Test!
+
+We are ready test something
+
+Lets take a simple example
+
+
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl -N \
+        --data-binary @features/jsontest.feature \
+        -H "Authorization: Bearer "$AUTH_TOKEN \
+        'https://run.damagebdd.com/execute_feature'
+
+</code>
+#+END_EXPORT
+where XXX is the auth token. Auth token variable can be set for session
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    export AUTH_TOKEN="TOKEN FROM EMAIL LINK"
+</code>
+#+END_EXPORT
+
+
 ** Available Steps
 
 Step reference can be found [[./steps.html][here.]]
 
 To get the most current list of step implementations:
 
+#+BEGIN_EXPORT html
+<code class="language-bash">
     curl https://run.damagebdd.com/steps.yaml
+</code>
+#+END_EXPORT
     
+
 ** Scheduling
+
+#+BEGIN_SRC sh :exports results :results value html
+    curl https://run.damagebdd.com/help/scheduling.txt
+
+#+END_SRC
+
 
 ** Reporting
 
+To fetch the report for previous runs find the report hash of the run.
+
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl -X POST -D "{"since": "1day"}" https://run.damagebdd.com/reports/
+</code>
+#+END_EXPORT
+
+To get the list of available reports for a sepecific run use the report hash
+
+
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl https://run.damagebdd.com/reports/<REPORT_HASH>/
+</code>
+#+END_EXPORT
+
+To get a specific report in a report hash, get <DAMAGE_PID> from the above list output 
+
+    
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl https://run.damagebdd.com/reports/<REPORT_HASH>/<DAMAGEPID>.color.txt
+</code>
+#+END_EXPORT
+
+** Localhost Testing and Tunneling
+
+Use the ssh reverse tunneling feature of DamageBDD to run tests on localhost.
+#+BEGIN_EXPORT html
+<code class="language-bash">
+    curl \
+        -X POST -D "{"local_port": 8080, "pub_key": "...keydata"}" \
+        -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/tunnels/
+</code>
+
+Then use the ssh client to setup a tunnel to allow DamageBDD to make requests to the server listening on the other end.
+<code class="language-bash">
+ssh -x run.damagebdd.com \
+    -p 8989 \
+    -i /var/lib/damagebdd/sshtest_user/.ssh/id_rsa \
+    -o UserKnownHostsFile=/var/lib/damagebdd/sshtest_user/.ssh/known_hosts \
+    -L 8787:localhost:8080
+</code>
+#+END_EXPORT
+
 ** Integrations
+
+TODO

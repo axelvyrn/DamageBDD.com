@@ -31,25 +31,27 @@ bitcoin payment address using the following command:
 </pre>
 #+END_EXPORT
 
-where `xxx` is replaced with the account id (provided in confirmation email)
+Replace `xxx` with your account id (provided in the confirmation email).
 
-To use the premium features top up the bitcoin address with some sats
-and they will be used to fund the execution of the test and support
-the development of the product.
+** Payments
 
-*** Pricing
+To access premium features, you need to top up your bitcoin address
+with some sats (satoshis). These funds will be used to execute tests
+and support the development of the product.
 
-Please refer to [[./pricing.html][pricing page]] for pricing.
 
-*** Refunds
+Please refer to the [[/pricing.html][pricing page]] for more information on pricing.
 
-To understand bitcoin refunds better please refer bitcoin guide on [[https://developer.bitcoin.org/devguide/payment_processing.html#issuing-refunds][issuing refund]].
+** Refunds
 
-To review DamageBDD's pricing and execution [[https://github.com/jagguli/DamageBDD/tree/master/contracts][contracts]].
+To gain a better understanding of bitcoin refunds, you can refer to the bitcoin guide on [[https://developer.bitcoin.org/devguide/payment_processing.html#issuing-refunds][issuing refund]].
 
-** Issuing a refund
+To review DamageBDD's pricing and execution contracts, visit the [[https://github.com/jagguli/DamageBDD/tree/master/contracts][contracts]] section.
 
-Withdrawing unused funds back into the refund address is easy.
+*** Issuing a refund
+
+Withdrawing unused funds back to the refund address is a simple
+process. Use the following command:
 
 #+BEGIN_EXPORT html
 <pre>
@@ -58,3 +60,5 @@ Withdrawing unused funds back into the refund address is easy.
 </code>
 </pre>
 #+END_EXPORT
+
+Withdrawing unused funds back into the refund address is easy.
