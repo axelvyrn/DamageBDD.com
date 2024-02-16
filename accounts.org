@@ -4,61 +4,30 @@
 
 ** Create an Account
 
-To fully utilize the capabilities of DamageBDD, you need to create and fund an account.
-
-To create an account, you must first have a `Refund Address`, which is
-the address where unused bitcoin can be refunded back to you. It is
-important to ensure that you have control over this address.
+To fully utilize the capabilities of DamageBDD, you need to create an account.
 
 Use the following forms to create an account:
 
 
-- [[/register-individual.html][Individual Registration Form]]
-- [[/register-business.html][Business Registration Form]]
+[[file:register-individual.org][Individual Registration Form]]
+
+[[file:register-business.org][Business Registration Form]]
 
 
 After submitting the form, you will receive a confirmation link in
 your email. Click on the link and set a password for your account.
 
 Once you have set a password, you can check your account balance and
-bitcoin payment address using the following command:
+find some free credits to get you started.
 
 #+BEGIN_EXPORT html
-<pre>
-<code class="language-shell">
-    curl https://run.damagebdd.com/accounts/balance?account=xxx
-</code>
-</pre>
+<pre><code class="language-bash">
+curl \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/accounts/balance
+</code></pre>
 #+END_EXPORT
 
-Replace `xxx` with your account id (provided in the confirmation email).
 
-** Payments
+See [[file:manual.org][manual]] for steps to get an ~AUTH_TOKEN~.
 
-To access premium features, you need to top up your bitcoin address
-with some sats (satoshis). These funds will be used to execute tests
-and support the development of the product.
-
-
-Please refer to the [[/pricing.html][pricing page]] for more information on pricing.
-
-** Refunds
-
-To gain a better understanding of bitcoin refunds, you can refer to the bitcoin guide on [[https://developer.bitcoin.org/devguide/payment_processing.html#issuing-refunds][issuing refund]].
-
-To review DamageBDD's pricing and execution contracts, visit the [[https://github.com/jagguli/DamageBDD/tree/master/contracts][contracts]] section.
-
-*** Issuing a refund
-
-Withdrawing unused funds back to the refund address is a simple
-process. Use the following command:
-
-#+BEGIN_EXPORT html
-<pre>
-<code class="language-shell">
-    curl -s 'https://run.damagebdd.com/accounts/refund?account=$CONTRACT_ADDRESS' |jq
-</code>
-</pre>
-#+END_EXPORT
-
-Withdrawing unused funds back into the refund address is easy.

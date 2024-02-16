@@ -5,67 +5,94 @@
 * User Manual
 
 
-To get quick help anytime:
-
-    curl https://run.damagebdd.com/help
-
 ** cURL Quick Start!
 
 *** Create Account
 
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl 'https://run.damagebdd.com/accounts/create' -H 'Content-Type: application/x-yaml' -d '
-    ---
-    email: "john.doe@example.com"
-    '
-</code>
+<pre><code class="language-bash">
+curl \
+    'https://run.damagebdd.com/accounts/create' \
+    -H 'Content-Type: application/x-yaml' \
+    -d 'email: john.doe@example.com'
+</code></pre>
 #+END_EXPORT
     
 Check email for confirmation and set up a password.
+
 Read more about account creation [[./accounts.org][here]].
     
 *** Get a Bearer Token
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl -X POST \
-        'https://run.damagebdd.com/auth/' \
-        -H 'Content-Type: application/x-yaml' -d '
-    ---
-    grant_type: "password"
-    username: "your damagebdd username/email"
-    password: "your damagebdd password"
-    scope: "basic"
-    '
-</code>
+<pre><code class="language-bash">
+curl -X POST \
+    'https://run.damagebdd.com/auth/' \
+    -H 'Content-Type: application/x-yaml' -d '
+---
+grant_type: "password"
+username: "your damagebdd username/email"
+password: "your damagebdd password"
+scope: "basic"
+'
+</code></pre>
 #+END_EXPORT
 
-*** Run a Test!
 
-We are ready test something
+Example using [[https://www.passwordstore.org/][pass]] and [[https://jqlang.github.io/jq/][jq]]:
 
-Lets take a simple example
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
 
+export AUTH_TOKEN=$( \
+    curl -sN -X POST "https://run.damagebdd.com/auth/" \
+        -d "grant_type=password&username="\
+        $(pass damagebdd/username)"&password="\
+        $(pass damagebdd/password)"&scope=basic" \
+        | jq -r '.access_token')
+ 
+</code></pre>
+#+END_EXPORT
+
+*** Running a Test
+
+Now that we have created and account, it's time to run a test. Let's walk through a simple example.
+
+Lets take a simple example feature 
 
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl -N \
-        --data-binary @features/jsontest.feature \
-        -H "Authorization: Bearer "$AUTH_TOKEN \
-        'https://run.damagebdd.com/execute_feature'
-
-</code>
+<pre><code class="language-gherkin">
+Feature: Http test feature
+  Scenario: Test post json
+    Given I am using server "https://run.damagebdd.com"
+    And I set "Content-Type" header to "application/json"
+    When I make a POST request to "/tests/"
+    """
+    {
+        "echo": "test"
+    }
+    """
+    Then the response status must be "201"
+    Then the json at path "$.echo" must be "test"
+</code></pre>
 #+END_EXPORT
-where XXX is the auth token. Auth token variable can be set for session
+
+Save this in a file called ~echotest.feature~
+
+Next, execute the following command in your terminal:
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    export AUTH_TOKEN="TOKEN FROM EMAIL LINK"
-</code>
+<pre><code class="language-bash">
+curl -N \
+    --data-binary @features/echotest.feature \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/execute_feature'
+</code></pre>
 #+END_EXPORT
+
+where ~$AUTH_TOKEN~ is the bearer token can be retrieved through the ~/auth~ endpoint as in the previous step.
 
 
 ** Available Steps
@@ -75,70 +102,119 @@ Step reference can be found [[./steps.html][here.]]
 To get the most current list of step implementations:
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl https://run.damagebdd.com/steps.yaml
-</code>
+<pre><code class="language-bash">
+curl https://run.damagebdd.com/steps.yaml
+</code></pre>
 #+END_EXPORT
     
 
 ** Scheduling
 
-#+BEGIN_SRC sh :exports results :results value html
-    curl https://run.damagebdd.com/help/scheduling.txt
-
-#+END_SRC
+*** Create a repeating scheduled run
 
 
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+curl -v -N \
+    --data-binary @features/damage_http.feature \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/daily/every/10/sec?account='$AE_CONTRACT
+</code></pre>
+#+END_EXPORT
+
+*** List schedules
 ** Reporting
 
 To fetch the report for previous runs find the report hash of the run.
 
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl -X POST -D "{"since": "1day"}" https://run.damagebdd.com/reports/
-</code>
+<pre><code class="language-bash">
+curl -X POST \
+    -D "{"since": "1day"}" \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/reports/
+</code></pre>
 #+END_EXPORT
 
 To get the list of available reports for a sepecific run use the report hash
 
 
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl https://run.damagebdd.com/reports/<REPORT_HASH>/
-</code>
+<pre><code class="language-bash">
+curl \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/reports/<REPORT_HASH>/
+</code></pre>
 #+END_EXPORT
 
-To get a specific report in a report hash, get <DAMAGE_PID> from the above list output 
+To get a specific report in a report hash, get ~<DAMAGE_PID>~ from the above list output 
 
     
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl https://run.damagebdd.com/reports/<REPORT_HASH>/<DAMAGEPID>.color.txt
-</code>
+<pre><code class="language-bash">
+curl \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/reports/<REPORT_HASH>/<DAMAGE_PID>.color.txt
+</code></pre>
 #+END_EXPORT
 
-** Localhost Testing and Tunneling
+** Localhost Testing Tunnel
 
-Use the ssh reverse tunneling feature of DamageBDD to run tests on localhost.
 #+BEGIN_EXPORT html
-<code class="language-bash">
-    curl \
-        -X POST -D "{"local_port": 8080, "pub_key": "...keydata"}" \
-        -H "Authorization: Bearer "$AUTH_TOKEN \
-    https://run.damagebdd.com/tunnels/
-</code>
 
-Then use the ssh client to setup a tunnel to allow DamageBDD to make requests to the server listening on the other end.
-<code class="language-bash">
+<div style="border: 1px solid #333; padding: 10px; margin: 10px 0; background-color: #f9f9f9;">
+  <i>
+Experimental Feature
+</i>
+</div>
+#+END_EXPORT
+
+To run tests on localhost using DamageBDD, you can utilize the ssh
+reverse tunneling feature. Please note that this feature is currently
+in the experimental phase.
+
+To set up the tunnel, follow these steps:
+
+1. Make a POST request to https://run.damagebdd.com/tunnels/ with the following parameters:
+
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+DAMAGE_TUNNEL_START=$(curl \
+    -X POST -D "{
+  "local_port": 8080,
+  "pub_key": "$SSH_PUBLIC_KEY"
+}"\
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/tunnels/)|jq -r '.tunnel_start_port')
+</code></pre>
+
+#+END_EXPORT
+
+
+2. Once the request is successful, use the ssh client to establish the tunnel by running the following command:
+
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+DAMAGE_SSH_SERVER_PORT=8989
+LOCAL_SERVER_PORT=8080
+
 ssh -x run.damagebdd.com \
     -p 8989 \
-    -i /var/lib/damagebdd/sshtest_user/.ssh/id_rsa \
-    -o UserKnownHostsFile=/var/lib/damagebdd/sshtest_user/.ssh/known_hosts \
-    -L 8787:localhost:8080
-</code>
+    -L $DAMAGE_TUNNEL_START:localhost:$LOCAL_SERVER_PORT
+</code></pre>
 #+END_EXPORT
+
+
+You now have a tunnel set up from the damagebdd server to your server
+running on localhost. Any tests you submit that refer to ~localhost~
+will be executed against the localhost server through this tunnel.
+
+Please note that this feature is still being refined, and it may
+undergo changes and improvements. If you encounter any issues or have
+any feedback, please let us know.
 
 ** Integrations
 
+*** Webhooks
 TODO

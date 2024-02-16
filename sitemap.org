@@ -1,5 +1,6 @@
 #+TITLE: DamageBDD - BDD at scale.
 
+- [[file:theindex.org][Index]]
 - [[file:manual.org][Damagebdd - User Manual]]
 - [[file:index.org][DamageBDD - Behavior verification at planet scale.]]
 - [[file:header.org][header]]

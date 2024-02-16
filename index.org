@@ -25,44 +25,7 @@ expected software behavior in plain language. This makes it easy for teams with
 varying levels of technical and communication skills to collaborate
 effectively towards building high quality software products.
 
-#+BEGIN_EXPORT html
 
-<div style="border: 1px solid #333; padding: 10px; margin: 10px 0; background-color: #f9f9f9;">
-  <strong>
-
-Try now!
-</strong>
-<br>
- No login or payment required for single test runs.
-<br>
-
-Use <a href='https://curl.se'>Curl</a> to download and run a sample bdd feature.
-<br>
-Please read <a href="tac.html">Terms & Conditions</a> before use.
-<br>
-For step documentation and help please refer to the <a href="manual.html">manual.</a>
-<br>
-For pricing and services please refer to <a href="pricing.html">pricing</a>
-</div>
-
-<pre>
-<code class="language-bash">
-# download sample bdd
-curl -o jsontest.feature \
-    https://run.damagebdd.com/features/jsontest.feature
-cat jsontest.feature
-
-# run bdd
-curl -s -N --data-binary @jsontest.feature \
-    -H "Authorization: guest" \
-    'https://run.damagebdd.com/execute_feature'
-</code>
-</pre>
-#+END_EXPORT
-
-Find more feature files [[https://github.com/jagguli/DamageBDD/tree/master/features][here]].
-
-Execute test from browser https://run.damagebdd.com 
 
 
 #+BEGIN_EXPORT html
@@ -75,12 +38,13 @@ DamageBDD can identify potential bottlenecks, stress test systems
 under realistic conditions, and help organization ensure that their
 applications can handle high user traffic.
 
-Furthermore, DamageBDD can also be utilized for continuous integration
-and deployment pipelines. It can be integrated into existing CI/CD
-workflows, allowing automated load testing to be performed as part of
-the software development process. This ensures that the performance of
-applications is constantly monitored and issues are identified early
-on, reducing the risk of potential performance problems in production.
+Furthermore, DamageBDD can also be utilized for continuous regression
+within integration and deployment pipelines. It can be integrated into
+existing CI/CD workflows, allowing automated load testing to be
+performed as part of the software development process. This ensures
+that the performance of applications is constantly monitored and
+issues are identified early on, reducing the risk of potential
+performance problems in production.
 
 DamageBDD is a powerful tool for organizations looking to improve their
 testing processes and ensure the performance and scalability of their

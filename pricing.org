@@ -1,35 +1,22 @@
 #+TITLE: Pricing - DamageBDD
 
 #+INCLUDE: "header.org"
+
 * Pricing Plans for DamageBDD
 
-At DamageBDD, we make it easy for you to pay using Bitcoin. Once you
-have signed up for an [[./accounts.org][account]], you will receive a
-bitcoin address to send your payment to. This payment will fund the
-execution of your tests and give you access to our premium features.
+At DamageBDD, we offer affordable pricing options for you to pay using
+the Bitcoin Lightning Network. With our easy-to-use platform, you can
+sign up for an [[./accounts.org][account]] and generate a Lightning Invoice for any
+amount. This payment will fund the execution of your tests and provide
+access to our premium features and paid support.
 
 To access the premium features of DamageBDD, please start by creating
-an [[./accounts.org][Account]]. Upon signup, you will be given a
-certain amount of free credits. Once you exhaust the free credits, you
-will have the option to top up your account using bitcoin.
-
-
-#+BEGIN_EXPORT html
-
-<div style="border: 1px solid #333; padding: 10px; margin: 10px 0; background-color: #f9f9f9;">
-  <strong>
-  Experience the power of Damagebdd on the bitcoin testnet!
-</strong>
-<br>
- Damagebdd is currently available for testing all features on the testnet.
- Register now to receive a bitcoin testnet payment address and start exploring the possibilities.
- Test bitcoins can be sent to your payment address from a reliable faucet like <a href="https://testnet-faucet.com/">this one</a>.
-</div>
-#+END_EXPORT
- 
+an [[./accounts.org][Account]]. Upon signup, you will be given a certain amount of free
+credits. Once you have exhausted the free credits, you can easily
+obtain more credits by making a lightning payment.
 
 Our pricing model is designed to be flexible and convenient for our
-users. With DamageBDD, you only pay for what you use, with
+users. With DamageBDD, you only pay for what you use, thanks to our
 pay-as-you-go pricing. This means that you can simply send any amount
 of bitcoin that will be sufficient to run your tests. However, please
 keep in mind the resources and complexity involved in your tests when
@@ -51,26 +38,21 @@ regularly for any updates.
 Here is a breakdown of our step-based pricing in Satoshis (sats) per
 step execution:
 
-| Step           | Price in Sats                       |
-|----------------|------------------------------------:|
-| Simple Step    | 1 Sat per 100,000  Step executions  |
-| Selenium Step  | 1 Sat per 50,000 Step executions    |
-| Appium Step    | 1 Sat per 1000 Step executions      |
+| Step          | Price in Sats                   |
+|---------------|--------------------------------:|
+| Simple Step   | 1 Sat per 100,000 Step executions |
+| Selenium Step | 1 Sat per 50,000 Step executions   |
+| Appium Step   | 1 Sat per 1,000 Step executions    |
 
 We hope this pricing information is clear and easy to understand. If
 you have any further questions or need assistance, please don't
 hesitate to contact our support team.
 
-
 ** Consultation Pricing
 
-Easiest way to get started with DamageBDD in your team's work flow
-quickly, book a consultation with DamageBDD.
+If you're looking to quickly integrate DamageBDD into your team's
+workflow, book a consultation with DamageBDD's experts.
 
 #+BEGIN_EXPORT html
-<a href="https://calendly.com/melit-stevenjoseph/15min">Schedule Call with DamageBDD Now</a>
+<a href="https://calendly.com/melit-stevenjoseph/15min">Schedule a Call with DamageBDD Now</a>
 #+END_EXPORT
-
-
-DamageBDD is a legally registered business entity in Australia,
-ABN: 39865763306.
