@@ -8,6 +8,7 @@
 	gtag('config', 'G-5QG625RHB7');
 
 	window.onload = init;
+	const toasts = new Toasts();
 
 	function init(){
 		// the code to be called when the dom has loaded
@@ -35,10 +36,18 @@
 				})
 					.then(response => response.json())
 					.then(data => {
-						console.log('Success:', data);
+						toasts.push({
+							title: 'Success',
+							content: data.message,
+							style: 'success'
+						});
 					})
 					.catch((error) => {
-						console.error('Error:', error);
+						toasts.push({
+							title: 'Request Failed',
+							content: error.message,
+							style: 'error'
+						});
 					});
 			});
 		}

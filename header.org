@@ -2,14 +2,16 @@
 #+OPTIONS: toc:nil
 #+HTML_PREAMBLE: <h1> DamageBDD Org</h1> 
 #+HTML_HEAD: <script async src='https://www.googletagmanager.com/gtag/js?id=G-5QG625RHB7'></script>
-#+HTML_HEAD: <script src="assets/js/three.min.js"></script>
-#+HTML_HEAD: <script src="assets/js/vanta.globe.min.js"></script>
-#+HTML_HEAD: <script src='assets/js/main.js'></script>
+#+HTML_HEAD: <script src="/assets/js/three.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/vanta.globe.min.js"></script>
+#+HTML_HEAD: <script src="/assets/js/toasts.js"></script>
+#+HTML_HEAD: <script src='/assets/js/main.js'></script>
 #+HTML_HEAD: <style type="text/css"> body { font-family: 'Roboto', sans-serif; } </style>
-#+HTML_HEAD: <script src='assets/js/highlight.min.js'></script>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='assets/css/highlightjs-default.min.css'>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='assets/css/main.css'/>
-#+HTML_HEAD: <script src='assets/js/gherkin.js'></script>
+#+HTML_HEAD: <script src='/assets/js/highlight.min.js'></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/highlightjs-default.min.css'>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/main.css'/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/toast.css'/>
+#+HTML_HEAD: <script src='/assets/js/gherkin.js'></script>
 #+HTML_HEAD: <script>hljs.highlightAll();</script>
 #+BEGIN_EXPORT html
 <div class="header" >
@@ -20,10 +22,10 @@
   <br>-->
   <ul id="mainmenu" >
         <li ><a href="/">Home</a></li>
-        <li ><a href="/manual.html">Manual</a></li>
-        <li ><a href="/pricing.html">Pricing</a></li>
+        <li ><a href="/manual">Get Started!</a></li>
+        <li ><a href="/pricing">Pricing</a></li>
         <li ><a href="/accounts.html">Accounts</a></li>
-        <li ><a href="/about.html">About</a></li>
+        <li ><a href="/about">About</a></li>
     </ul>
   <br>
 </div>

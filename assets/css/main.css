@@ -7,9 +7,6 @@
     text-decoration: none;
     color: inherit;
 }
-.header {
-    align-items: center;
-}
 
 .header img { margin-right: 10px; } 
 
@@ -32,7 +29,11 @@
 }
 
 .header {
-    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
 }
 body .title { display: none; }
 
@@ -57,7 +58,7 @@ body .title { display: none; }
 .content{
     max-width: 1800px;
      margin: auto;
-  width: 50%;
+  width: 80%;
   padding: 10px;
 	float: none !important; 
 }
@@ -152,4 +153,36 @@ pre {
     padding: 0.4em 1.5em;
     display: block;
     word-wrap: break-word;
+}
+#table-of-contents{
+    float: right;
+    margin-top: 4em;
+}
+#table-of-contents > h2{
+    display:none;
+}
+#page1 {
+    margin-top: 620px;
+}
+#text-table-of-contents > ul > li > ul > li > ul >li:before {
+  content: "- ";
+  text-indent: -5px;
+}
+#text-table-of-contents > ul > li > ul > li > ul{
+    list-style-type: none;
+}
+#text-table-of-contents > ul > li > ul{
+    list-style-type: none;
+}
+#text-table-of-contents > ul{
+    list-style-type: none;
+}
+
+
+#text-table-of-contents > ul > li > a:after {
+  content: 'Damage Tokens';
+  font-size:5em;         /* original font size */
+}
+#text-table-of-contents > ul > li > a {
+  font-size:0;
 }
