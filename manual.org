@@ -1,13 +1,19 @@
-#+Title: Damagebdd - User Manual
+#+Title: DamageBDD User Manual: Get Started with Behavior Testing in Minutes!
 
 #+INCLUDE: "header.org"
+#+OPTIONS: toc:2      
 
-* User Manual
+* Get Started with Behavior Testing in Minutes!
+
+Welcome to DamageBDD, the powerful and user-friendly behavior testing platform designed to help you automate your application
+testing process. In this quick start guide, we'll walk you through setting up an account, generating a simple test, and running
+it using cURL. Let's dive in!
 
 
-** cURL Quick Start!
+** Create an Account
 
-*** Create Account
+To get started with DamageBDD, you need to create an account. You can do this by sending a POST request to our account creation
+endpoint using the `[[https://curl.se/][curl]]` command:
 
 
 #+BEGIN_EXPORT html
@@ -19,11 +25,13 @@ curl \
 </code></pre>
 #+END_EXPORT
     
-Check email for confirmation and set up a password.
+Check your email for a confirmation, then set up a password at the DamageBDD website. 
 
-Read more about account creation [[./accounts.org][here]].
+You can also use this [[./accounts.org][form]] to create an account from a browser.
     
-*** Get a Bearer Token
+** Get a Bearer Token
+
+Next, you need to get a bearer token by authenticating with our system:
 
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
@@ -38,6 +46,8 @@ scope: "basic"
 '
 </code></pre>
 #+END_EXPORT
+
+Store the token securely. You will use it in your future requests to DamageBDD.
 
 
 Example using [[https://www.passwordstore.org/][pass]] and [[https://jqlang.github.io/jq/][jq]]:
@@ -55,12 +65,9 @@ export AUTH_TOKEN=$( \
 </code></pre>
 #+END_EXPORT
 
-*** Running a Test
+** Running a Test
 
-Now that we have created and account, it's time to run a test. Let's walk through a simple example.
-
-Lets take a simple example feature 
-
+Now that you have an account and a bearer token, let's write and run a simple test using Gherkin syntax:
 
 #+BEGIN_EXPORT html
 <pre><code class="language-gherkin">
@@ -79,9 +86,8 @@ Feature: Http test feature
 </code></pre>
 #+END_EXPORT
 
-Save this in a file called ~echotest.feature~
+Save this test in a file called ~echotest.feature~, and then run it using `curl`:
 
-Next, execute the following command in your terminal:
 
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
@@ -92,8 +98,38 @@ curl -N \
 </code></pre>
 #+END_EXPORT
 
-where ~$AUTH_TOKEN~ is the bearer token can be retrieved through the ~/auth~ endpoint as in the previous step.
+where ~$AUTH_TOKEN~ is the bearer token can be retrieved in the previous step.
 
+
+
+** Running tests against Authorized Domains
+
+Domain authorization is implemented in the DamageBDD behavior testing
+and load testing platform to ensure that only authorized domains can
+run tests through the network. This helps maintain the security and
+integrity of the network by restricting access to trusted domains.
+
+To interact with the domain authorization feature, users can use the
+following API endpoints:
+
+*** List Domain Tokens
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+curl -X GET \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/accounts/domains -H "Content-Type: application/json"
+</code></pre>
+#+END_EXPORT
+
+*** Generate Token for Domain
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+curl -X PUT \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/accounts/domains -H "Content-Type: application/json" -d '{"domain": "example.com"}'
+</code></pre>
+#+END_EXPORT
+By utilizing these endpoints, users can manage and authorize domains for testing purposes effectively.
 
 ** Available Steps
 
@@ -106,7 +142,6 @@ To get the most current list of step implementations:
 curl https://run.damagebdd.com/steps.yaml
 </code></pre>
 #+END_EXPORT
-    
 
 ** Scheduling
 
@@ -213,6 +248,13 @@ will be executed against the localhost server through this tunnel.
 Please note that this feature is still being refined, and it may
 undergo changes and improvements. If you encounter any issues or have
 any feedback, please let us know.
+** REST Api
+
+Swagger UI for the REST API can be found [[https://run.damagebdd.com/api-docs/][here]].
+
+** WebInterface (experimental)
+
+[[./run.org][Here]] is the link to the experimental web interface, using curl is the recommended method.
 
 ** Integrations
 

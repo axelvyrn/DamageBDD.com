@@ -186,3 +186,7 @@ pre {
 #text-table-of-contents > ul > li > a {
   font-size:0;
 }
+
+#kycForm{
+    width: 30em;
+}

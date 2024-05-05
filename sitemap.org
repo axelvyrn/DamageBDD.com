@@ -1,5 +1,8 @@
 #+TITLE: DamageBDD - BDD at scale.
 
+- [[file:gherkin.org][gherkin]]
+- [[file:whitepaper.org][DamageBDD - Whitepaper]]
+- [[file:run.org][Damagebdd - Web UI]]
 - [[file:theindex.org][Index]]
 - [[file:manual.org][Damagebdd - User Manual]]
 - [[file:index.org][DamageBDD - Behavior verification at planet scale.]]
@@ -12,3 +15,11 @@
 - [[file:register-individual.org][Individual Registration - DamageBDD]]
 - [[file:tac.org][Terms and Conditions]]
 - [[file:todo.org][todo]]
+- articles
+  - [[file:articles/threebodyproblem.org][threebodyproblem]]
+  - [[file:articles/usecase_generic.org][usecase_generic]]
+  - [[file:articles/usecase_insurance.org][usecase_insurance]]
+  - [[file:articles/developerzen.org][developerzen]]
+  - [[file:articles/whatisdamage.org][whatisdamage]]
+  - [[file:articles/01-introduction.org][01-introduction]]
+  - [[file:articles/theindex.org][Index]]

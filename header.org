@@ -24,7 +24,8 @@
         <li ><a href="/">Home</a></li>
         <li ><a href="/manual">Get Started!</a></li>
         <li ><a href="/pricing">Pricing</a></li>
-        <li ><a href="/accounts.html">Accounts</a></li>
+        <li ><a href="/articles">Articles</a></li>
+        <!--<li ><a href="/accounts.html">Accounts</a></li>-->
         <li ><a href="/about">About</a></li>
     </ul>
   <br>
