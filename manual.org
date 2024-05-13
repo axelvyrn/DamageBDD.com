@@ -5,15 +5,15 @@
 
 * Get Started with Behavior Testing in Minutes!
 
-Welcome to DamageBDD, the powerful and user-friendly behavior testing platform designed to help you automate your application
-testing process. In this quick start guide, we'll walk you through setting up an account, generating a simple test, and running
-it using cURL. Let's dive in!
+Welcome to DamageBDD, the powerful and user-friendly behavior testing platform designed to help you automate your application testing process. In this quick start guide, we'll walk you through setting up an account, writing a simple test using your editor, and running it using cURL.
 
+*Let's dive in!* *
+
+/[*] please read usage terms & conditions [[./tac.org][here]]/
 
 ** Create an Account
 
-To get started with DamageBDD, you need to create an account. You can do this by sending a POST request to our account creation
-endpoint using the `[[https://curl.se/][curl]]` command:
+To get started with DamageBDD, you need to create an account. You can do this by sending a POST request to our account creation endpoint using the `[[https://curl.se/][curl]]` command:
 
 
 #+BEGIN_EXPORT html
@@ -31,26 +31,25 @@ You can also use this [[./accounts.org][form]] to create an account from a brows
     
 ** Get a Bearer Token
 
-Next, you need to get a bearer token by authenticating with our system:
+Next, you need to get a bearer token by authenticating with DamageBDD:
 
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
 curl -X POST \
     'https://run.damagebdd.com/auth/' \
-    -H 'Content-Type: application/x-yaml' -d '
----
-grant_type: "password"
-username: "your damagebdd username/email"
-password: "your damagebdd password"
-scope: "basic"
-'
+    --json '{
+        "grant_type": "password",
+        "username": "your damagebdd username/email",
+        "password": "your damagebdd password",
+        "scope": "basic"
+    }'
 </code></pre>
 #+END_EXPORT
 
 Store the token securely. You will use it in your future requests to DamageBDD.
 
 
-Example using [[https://www.passwordstore.org/][pass]] and [[https://jqlang.github.io/jq/][jq]]:
+Heres is an example of fetching and storing an auth token using [[https://www.passwordstore.org/][pass]] and [[https://jqlang.github.io/jq/][jq]]:
 
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
@@ -64,6 +63,15 @@ export AUTH_TOKEN=$( \
  
 </code></pre>
 #+END_EXPORT
+** Quick introduction to Gherkin
+
+Before we move on to writing a running test, here is a quick introduction to the simple Gherkin syntax that DamageBDD uses.
+
+[[file:articles/gherkin.org][Introduction to Gherkin]]
+
+DamageBDD contains a suite of predefined steps that you can use to create rich test cases. Configurable step aliases are a planned feature that will enable users to configure the step definition to suite the organization's vocabulary. 
+
+[[file:steps.org][Available Steps]]
 
 ** Running a Test
 
@@ -102,7 +110,8 @@ where ~$AUTH_TOKEN~ is the bearer token can be retrieved in the previous step.
 
 
 
-** Running tests against Authorized Domains
+
+** Authorized Domains
 
 Domain authorization is implemented in the DamageBDD behavior testing
 and load testing platform to ensure that only authorized domains can
@@ -117,7 +126,7 @@ following API endpoints:
 <pre><code class="language-bash">
 curl -X GET \
     -H "Authorization: Bearer "$AUTH_TOKEN \
-    https://run.damagebdd.com/accounts/domains -H "Content-Type: application/json"
+    https://run.damagebdd.com/accounts/domains
 </code></pre>
 #+END_EXPORT
 
@@ -126,7 +135,7 @@ curl -X GET \
 <pre><code class="language-bash">
 curl -X PUT \
     -H "Authorization: Bearer "$AUTH_TOKEN \
-    https://run.damagebdd.com/accounts/domains -H "Content-Type: application/json" -d '{"domain": "example.com"}'
+    https://run.damagebdd.com/accounts/domains --json '{"domain": "example.com"}'
 </code></pre>
 #+END_EXPORT
 By utilizing these endpoints, users can manage and authorize domains for testing purposes effectively.
@@ -153,11 +162,34 @@ curl https://run.damagebdd.com/steps.yaml
 curl -v -N \
     --data-binary @features/damage_http.feature \
     -H "Authorization: Bearer "$AUTH_TOKEN \
-    'https://run.damagebdd.com/schedule/daily/every/10/sec?account='$AE_CONTRACT
+    'https://run.damagebdd.com/schedule/daily/every/10/sec
 </code></pre>
 #+END_EXPORT
 
 *** List schedules
+
+To list all the scheduled jobs for a user.
+
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+curl -v -N \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/
+</code></pre>
+#+END_EXPORT
+*** Delete schedules
+
+To delete a scheduled job, use the id from the listing in the following request
+
+#+BEGIN_EXPORT html
+<pre><code class="language-bash">
+curl -v -N \
+    -X DELETE
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/${SCHEDULE_ID}/
+</code></pre>
+#+END_EXPORT
+
 ** Reporting
 
 To fetch the report for previous runs find the report hash of the run.
@@ -166,20 +198,21 @@ To fetch the report for previous runs find the report hash of the run.
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
 curl -X POST \
-    -D "{"since": "1day"}" \
+    --json "{"since": "1day"}" \
     -H "Authorization: Bearer "$AUTH_TOKEN \
     https://run.damagebdd.com/reports/
 </code></pre>
 #+END_EXPORT
 
-To get the list of available reports for a sepecific run use the report hash
+To get the list of available reports for a specific run use the report hash
 
 
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
+REPORT_HASH="REPORT_HASH"
 curl \
     -H "Authorization: Bearer "$AUTH_TOKEN \
-    https://run.damagebdd.com/reports/<REPORT_HASH>/
+    https://run.damagebdd.com/reports/$REPORT_HASH/
 </code></pre>
 #+END_EXPORT
 
@@ -188,9 +221,11 @@ To get a specific report in a report hash, get ~<DAMAGE_PID>~ from the above lis
     
 #+BEGIN_EXPORT html
 <pre><code class="language-bash">
+DAMAGE_PID="PID"
+REPORT_HASH="REPORT_HASH"
 curl \
     -H "Authorization: Bearer "$AUTH_TOKEN \
-    https://run.damagebdd.com/reports/<REPORT_HASH>/<DAMAGE_PID>.color.txt
+    https://run.damagebdd.com/reports/$REPORT_HASH/$DAMAGE_PID.color.txt
 </code></pre>
 #+END_EXPORT
 
@@ -254,7 +289,7 @@ Swagger UI for the REST API can be found [[https://run.damagebdd.com/api-docs/][
 
 ** WebInterface (experimental)
 
-[[./run.org][Here]] is the link to the experimental web interface, using curl is the recommended method.
+[[https://run.damagebdd.com][Here]] is the link to the experimental web interface, using curl is the current recommended method.
 
 ** Integrations
 

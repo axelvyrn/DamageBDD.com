@@ -6,6 +6,7 @@
 
 To fully utilize the capabilities of DamageBDD, you need to create an account.
 
+
 Use the following form to create an account:
 
 
@@ -30,6 +31,7 @@ Use the following form to create an account:
   <label for="idDocument">ID Document (Passport, Driver’s License, etc.):</label>
   <input type="file" id="idDocument" name="idDocument" required><br><br>-->
 
+  <i>By clicking submit you are agreeing to the usage terms & conditions <a href="/tac.html">here.</a></i><br><br>
   <button type="submit">Submit</button>
 </form>
 #+END_EXPORT

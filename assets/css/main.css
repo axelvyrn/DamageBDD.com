@@ -190,3 +190,12 @@ pre {
 #kycForm{
     width: 30em;
 }
+p.hashtags{
+    display:none;
+}
+ol.ol-org > li{
+    padding:1em; 
+}
+tr{
+    border-bottom: 1px dashed rgb(224, 224, 224);
+}

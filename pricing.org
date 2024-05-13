@@ -27,7 +27,7 @@ implementations. Each step is individually priced based on the
 resources used and complexity involved. If you run steps concurrently,
 each execution will count against the total number of step
 executions. For example, running one step 10 times will deduct 10
-Damage Units from your balance.
+Damage Tokens from your balance.
 
 Please note that pricing may be subject to change as we continue to
 update and improve our product. We recommend checking this page

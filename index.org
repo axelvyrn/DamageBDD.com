@@ -1,4 +1,4 @@
-#+TITLE: DamageBDD - Behavior verification at planetary scale.
+#+TITLE: DamageBDD - Behaviour verification at planetary scale.
 
 
 #+INCLUDE: "header.org"
@@ -19,8 +19,8 @@ collaborative power of [[https://en.wikipedia.org/wiki/Behavior-driven_developme
 
 DamageBDD allows humans to define software behaviour in the human-readable
 Gherkin syntax. Unlike other testing systems that require a deep
-understanding of testing tools, DamageBDD enables any one to define
-expected software behavior in plain language. This makes it easy for teams with
+understanding of testing tools, DamageBDD enables anyone to define
+expected software behaviour in plain language. This makes it easy for teams with
 varying levels of technical and communication skills to collaborate
 effectively towards building high quality software products.
 
@@ -76,31 +76,31 @@ usually requires someone with intimate understanding of load testing
 tools, whereas DamageBDD test cases are human readable Behaviour
 Driven Tests.
 
+See more working examples [[https://github.com/jagguli/DamageBDD/tree/master/features][here]].
+
 * Features
 
-Currently DamageBDD is in early stage of development, most of the
-features listed below are in active development.
+Currently DamageBDD is in early stage of development, most of the features listed below are in active development. 
 
-- HTTP/REST API for submitting features for execution with simple result. - DONE
-- Scheduled test execution. Continiuous testing configuration. - DONE
-- Bitcoin + DeFi Smartcontract based accounting and payment system. - TESTING
-- Account management for KYC/AML regulatory compliance - TESTING
-- Ipfs Reporting and report mangement API - TESTING
-- Selenium integration for browser Testing - TESTING
-- SSH Reverse tunnelling for localhost testing. - INPROGRESS
-- GPT code generation from BDD, and self verification. - INPROGRESS
-- Secrets management and variable templatization - INPROGRESS
-- Metrics Dashboard - INPROGRESS
-- Test Management REST API interface
-- Alerting and notifications
-- Managed test runners 
-- Appium integration for mobile ecosystem support.
-- BDD scenario generation from voice input fed to Generative AIs.
-- Generative AI code modification based on features.
-- Zero Knowledge Proof based contracts to validate tests and approve payouts.
-- "Super Step" user defined high level abstractions.
-- DamageBDD DeFi market making for test writers and stakeholders.
-- [[./whitepaper.html][Damage Tokens]] to power collaborative testing at scale ensuring continuous resilience.
+| DamageBDD Feature                                                                                              | Status  |
+|----------------------------------------------------------------------------------------------------------------+---------|
+| HTTP/REST API for submitting features for execution with simple result.                                      | done    |
+| Scheduled test execution and continuous testing configuration.                                              | testing |
+| Bitcoin + DeFi Smartcontract based accounting and payment system.                                            | testing |
+| Account management for KYC/AML regulatory compliance.                                                        | testing |
+| Secrets management and variable templatization.                                                              | testing |
+| Ipfs Reporting and report management API.                                                                     | testing |
+| Events triggers for outbound Webhooks.                                                                       | testing |
+| Metrics and Analytics Dashboard.                                                                             | in-progress |
+| Selenium integration for browser Testing.                                                                    | analysis |
+| Appium integration for mobile ecosystem support.                                                             | analysis |
+| SSH Reverse tunneling for localhost testing.                                                                | testing |
+| AI assisted BDD scenario generation.                                                                         | analysis |
+| AI code generation and modification based on features, and self verification.                                | testing |
+| "Super Step" user defined high level abstractions.                                                           | analysis |
+| Zero Knowledge Proof based contracts to validate tests and approve payouts.                                  | analysis |
+| DamageBDD DeFi market making for test writers and stakeholders.                                              | analysis |
+| [[./whitepaper.html][Damage Tokens]] to power collaborative testing at scale ensuring continuous resilience.                        | analysis |
   
 * Target User Roles  
 
@@ -109,8 +109,8 @@ Benefits to organizational roles through the aid of the DamageBDD platform.
 | Role            | Use Case                                                                       |
 |-----------------+--------------------------------------------------------------------------------|
 | End User        | initial requirements, feature requests, defect reporting                       |
-| Product Support | feature requests, isolating defect behaviours, edge cases, monitoring, alerting|
-| QA              | define expected behaviors, continuous monitoring, reporting, alerts            |
+| Product Support | feature requests, isolating defect behaviour, edge cases, monitoring, alerting|
+| QA              | define expected behaviours, continuous monitoring, reporting, alerts        |
 | Infra           | availability monitoring, endpoint latency reporting, alerts,                   |
 | Development     | prototyping, maintenance, verification, continous monitoring                   |
 | Management      | project velocity, current progress, performance metrics, fund allocation     |
@@ -126,12 +126,11 @@ covered using BDD workflow on DamageBDD.
 - Infrastructure availability expectation management.
 - General Process Execution orchestration through custom Step implementations.
 - General Behaviour verification based on custom input sources.
-- 
 
 * References
 
 - [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
-- [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behavior-Driven Development]]
+- [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
 - [[./whitepaper.html][Damage Token Whitepaper]]
 - [[https://github.com/jagguli/DamageBDD][DamageBDD Repo]]
 - [[https://www.linkedin.com/company/damagebdd/][DamageBDD Linkedin Page]]
