@@ -138,22 +138,6 @@ button {
   src: url(/assets/js/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 
-pre {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #f36d33;
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 0.4em 1.5em;
-    display: block;
-    word-wrap: break-word;
-}
 #table-of-contents{
     float: right;
     margin-top: 4em;
@@ -199,3 +183,30 @@ ol.ol-org > li{
 tr{
     border-bottom: 1px dashed rgb(224, 224, 224);
 }
+
+.hljs{
+    background: none;
+}
+a{
+    color: #005500;
+    text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/*pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #55aa00;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.4em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}*/

@@ -78,6 +78,17 @@
 			color2: 0x2d6e45,
 			backgroundColor: 0xffffff
 		})
+		codeInput.registerTemplate(
+			"syntax-highlighted",
+			codeInput.templates.hljs(
+				hljs,
+				[
+					new codeInput.plugins.Autodetect(),
+					new codeInput.plugins.Indent(true, 2) // 2 spaces indentation
+				]
+			)
+		);
+
 	});
 
 })(window, document, undefined);
