@@ -5,7 +5,9 @@
 
 * Get Started with Behavior Testing in Minutes!
 
-Welcome to DamageBDD, the powerful and user-friendly behavior testing platform designed to help you automate your application testing process. In this quick start guide, we'll walk you through setting up an account, writing a simple test using your editor, and running it using cURL.
+Welcome to DamageBDD, the powerful and user-friendly behavior testing platform designed to help you automate your application testing process.
+
+In this quick start guide, we'll walk you through setting up an account, writing a simple test and running it.
 
 *Let's dive in!* *
 
@@ -13,11 +15,17 @@ Welcome to DamageBDD, the powerful and user-friendly behavior testing platform d
 
 ** Create an Account
 
-To get started with DamageBDD, you need to create an account. You can do this by sending a POST request to our account creation endpoint using the `[[https://curl.se/][curl]]` command:
+To get started with DamageBDD, you need to create an account.
+
+
+
+You can do this by signing up using the web ui at https://run.damagebdd.com or
+
+using the `[[https://curl.se/][curl]]` command and sending a POST request to our account creation endpoin:
 
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl \
     'https://run.damagebdd.com/accounts/create' \
     -H 'Content-Type: application/x-yaml' \
@@ -27,14 +35,13 @@ curl \
     
 Check your email for a confirmation, then set up a password at the DamageBDD website. 
 
-You can also use this [[./accounts.org][form]] to create an account from a browser.
     
 ** Get a Bearer Token
 
 Next, you need to get a bearer token by authenticating with DamageBDD:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl -X POST \
     'https://run.damagebdd.com/auth/' \
     --json '{
@@ -52,7 +59,7 @@ Store the token securely. You will use it in your future requests to DamageBDD.
 Heres is an example of fetching and storing an auth token using [[https://www.passwordstore.org/][pass]] and [[https://jqlang.github.io/jq/][jq]]:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 
 export AUTH_TOKEN=$( \
     curl -sN -X POST "https://run.damagebdd.com/auth/" \
@@ -78,7 +85,7 @@ DamageBDD contains a suite of predefined steps that you can use to create rich t
 Now that you have an account and a bearer token, let's write and run a simple test using Gherkin syntax:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-gherkin">
+<pre class='snippet'><code class="language-gherkin">
 Feature: Http test feature
   Scenario: Test post json
     Given I am using server "https://run.damagebdd.com"
@@ -98,7 +105,7 @@ Save this test in a file called ~echotest.feature~, and then run it using `curl`
 
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl -N \
     --data-binary @features/echotest.feature \
     -H "Authorization: Bearer "$AUTH_TOKEN \
@@ -123,7 +130,7 @@ following API endpoints:
 
 *** List Domain Tokens
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl -X GET \
     -H "Authorization: Bearer "$AUTH_TOKEN \
     https://run.damagebdd.com/accounts/domains
@@ -132,7 +139,7 @@ curl -X GET \
 
 *** Generate Token for Domain
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl -X PUT \
     -H "Authorization: Bearer "$AUTH_TOKEN \
     https://run.damagebdd.com/accounts/domains --json '{"domain": "example.com"}'
@@ -147,46 +154,8 @@ Step reference can be found [[./steps.html][here.]]
 To get the most current list of step implementations:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl https://run.damagebdd.com/steps.yaml
-</code></pre>
-#+END_EXPORT
-
-** Scheduling
-
-*** Create a repeating scheduled run
-
-
-#+BEGIN_EXPORT html
-<pre><code class="language-bash">
-curl -v -N \
-    --data-binary @features/damage_http.feature \
-    -H "Authorization: Bearer "$AUTH_TOKEN \
-    'https://run.damagebdd.com/schedule/daily/every/10/sec
-</code></pre>
-#+END_EXPORT
-
-*** List schedules
-
-To list all the scheduled jobs for a user.
-
-#+BEGIN_EXPORT html
-<pre><code class="language-bash">
-curl -v -N \
-    -H "Authorization: Bearer "$AUTH_TOKEN \
-    'https://run.damagebdd.com/schedule/
-</code></pre>
-#+END_EXPORT
-*** Delete schedules
-
-To delete a scheduled job, use the id from the listing in the following request
-
-#+BEGIN_EXPORT html
-<pre><code class="language-bash">
-curl -v -N \
-    -X DELETE
-    -H "Authorization: Bearer "$AUTH_TOKEN \
-    'https://run.damagebdd.com/schedule/${SCHEDULE_ID}/
 </code></pre>
 #+END_EXPORT
 
@@ -194,11 +163,24 @@ curl -v -N \
 
 To fetch the report for previous runs find the report hash of the run.
 
+For example to fetch all reports since the last one day:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 curl -X POST \
     --json "{"since": "1day"}" \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    https://run.damagebdd.com/reports/
+</code></pre>
+#+END_EXPORT
+
+Another example to query run records by result status of "success" or "failure".
+This will return the run records for previous runs filtered by feature exit status.
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -X POST \
+    --json "{"since": "3hours", "status": "success"}" \
     -H "Authorization: Bearer "$AUTH_TOKEN \
     https://run.damagebdd.com/reports/
 </code></pre>
@@ -208,7 +190,7 @@ To get the list of available reports for a specific run use the report hash
 
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 REPORT_HASH="REPORT_HASH"
 curl \
     -H "Authorization: Bearer "$AUTH_TOKEN \
@@ -220,12 +202,51 @@ To get a specific report in a report hash, get ~<DAMAGE_PID>~ from the above lis
 
     
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 DAMAGE_PID="PID"
 REPORT_HASH="REPORT_HASH"
 curl \
     -H "Authorization: Bearer "$AUTH_TOKEN \
     https://run.damagebdd.com/reports/$REPORT_HASH/$DAMAGE_PID.color.txt
+</code></pre>
+#+END_EXPORT
+
+
+** Scheduling
+
+*** Create a repeating scheduled run
+
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -N \
+    --data-binary @features/damage_http.feature \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/daily/every/10/sec
+</code></pre>
+#+END_EXPORT
+
+*** List schedules
+
+To list all the scheduled jobs for a user.
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -N \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/
+</code></pre>
+#+END_EXPORT
+*** Delete schedules
+
+To delete a scheduled job, use the id from the listing in the following request
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -v -N \
+    -X DELETE
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/schedule/${SCHEDULE_ID}/
 </code></pre>
 #+END_EXPORT
 
@@ -249,7 +270,7 @@ To set up the tunnel, follow these steps:
 1. Make a POST request to https://run.damagebdd.com/tunnels/ with the following parameters:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 DAMAGE_TUNNEL_START=$(curl \
     -X POST -D "{
   "local_port": 8080,
@@ -265,7 +286,7 @@ DAMAGE_TUNNEL_START=$(curl \
 2. Once the request is successful, use the ssh client to establish the tunnel by running the following command:
 
 #+BEGIN_EXPORT html
-<pre><code class="language-bash">
+<pre class='snippet'><code class="language-bash">
 DAMAGE_SSH_SERVER_PORT=8989
 LOCAL_SERVER_PORT=8080
 
@@ -283,15 +304,48 @@ will be executed against the localhost server through this tunnel.
 Please note that this feature is still being refined, and it may
 undergo changes and improvements. If you encounter any issues or have
 any feedback, please let us know.
-** REST Api
+
+
+** Integrations
+
+*** Webhooks
+
+**** List Webhooks
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/webhooks' | jq 
+</code></pre>
+#+END_EXPORT
+
+**** Add Webhook
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl -X POST \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.damagebdd.com/webhooks/' \
+    --json '{"name": "discord", "url": "https://discord.com/api/webhooks/xxxx/xxxx"}'
+</code></pre>
+#+END_EXPORT
+
+**** Remove Webhook
+
+#+BEGIN_EXPORT html
+<pre class='snippet'><code class="language-bash">
+curl \
+    -X DELETE \
+    -H "Authorization: Bearer "$AUTH_TOKEN \
+    'https://run.staging.damagebdd.com/webhooks/discord/'
+</code></pre>
+#+END_EXPORT
+
+
+** REST Api & Swagger UI
 
 Swagger UI for the REST API can be found [[https://run.damagebdd.com/api-docs/][here]].
 
 ** WebInterface (experimental)
 
 [[https://run.damagebdd.com][Here]] is the link to the experimental web interface, using curl is the current recommended method.
-
-** Integrations
-
-*** Webhooks
-TODO
