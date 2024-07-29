@@ -8,18 +8,21 @@
 #+HTML_HEAD: <script src='/assets/js/main.js'></script>
 #+HTML_HEAD: <style type="text/css"> body { font-family: 'Roboto', sans-serif; } </style>
 #+HTML_HEAD: <script src='/assets/js/highlight.min.js'></script>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/highlightjs-default.min.css'>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/humanoid-light.css'>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/main.css'/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/toast.css'/>
-#+HTML_HEAD: <script src='/assets/js/gherkin.js'></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/fontawesome.min.css'/>
 #+HTML_HEAD: <script>hljs.highlightAll();</script>
+#+HTML_HEAD: <script src="https://kit.fontawesome.com/cf1d913439.js" crossorigin="anonymous"></script>
 #+BEGIN_EXPORT html
 <div class="header" >
 <!--
   <a href="/"><img src="assets/img/damagelogo.png" alt="Logo" height="130px"/>
   <h1>DamageBDD</h1>
   </a>
-  <br>-->
+  <br>
+  -->
+  <div id='mainmenudiv'>
   <ul id="mainmenu" >
         <li ><a href="/">Home</a></li>
         <li ><a href="/manual">Get Started!</a></li>
@@ -27,7 +30,16 @@
         <li ><a href="/articles">Articles</a></li>
         <!--<li ><a href="/accounts.html">Accounts</a></li>-->
         <li ><a href="/about">About</a></li>
-    </ul>
+  </ul>
+        <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+    </div>
   <br>
 </div>
 #+END_EXPORT
