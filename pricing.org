@@ -4,23 +4,6 @@
 
 * Pricing Plans for DamageBDD
 
-At DamageBDD, we offer affordable pricing options for you to pay using
-the Bitcoin Lightning Network. With our easy-to-use platform, you can
-sign up for an [[./accounts.org][account]] and generate a Lightning Invoice for any
-amount. This payment will fund the execution of your tests and provide
-access to our premium features and paid support.
-
-To access the premium features of DamageBDD, please start by creating
-an [[./accounts.org][Account]]. Upon signup, you will be given a certain amount of free
-credits. Once you have exhausted the free credits, you can easily
-obtain more credits by making a lightning payment.
-
-Our pricing model is designed to be flexible and convenient for our
-users. With DamageBDD, you only pay for what you use, thanks to our
-pay-as-you-go pricing. This means that you can simply send any amount
-of bitcoin that will be sufficient to run your tests. However, please
-keep in mind the resources and complexity involved in your tests when
-determining the amount to send.
 
 We calculate pricing based on the number of steps and their
 implementations. Each step is individually priced based on the
@@ -35,14 +18,16 @@ regularly for any updates.
 
 ** Step Based Pricing
 
-Here is a breakdown of our step-based pricing in Satoshis (sats) per
-step execution:
+Here is a breakdown of our step-based pricing:
 
-| Step          | Price in Sats                   |
-|---------------|--------------------------------:|
-| Simple Step   | 1 Sat per 100,000 Step executions |
-| Selenium Step | 1 Sat per 50,000 Step executions   |
-| Appium Step   | 1 Sat per 1,000 Step executions    |
+1 Damage Token = 100 Satoshis (0.000001 BTC) per token.
+
+| Step          | Price in Sats |
+|---------------|---------------|
+| Simple Step   | 1 DAMAGE      |
+| Selenium Step | 500 DAMAGE    |
+| Appium Step   | 1000 DAMAGE   |
+
 
 We hope this pricing information is clear and easy to understand. If
 you have any further questions or need assistance, please don't
