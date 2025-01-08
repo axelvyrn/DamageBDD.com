@@ -86,7 +86,7 @@ Currently DamageBDD is in early stage of development, most of the features liste
 |----------------------------------------------------------------------------------------------------------------+---------|
 | HTTP/REST API for submitting features for execution with simple result.                                      | done    |
 | Scheduled test execution and continuous testing configuration.                                              | testing |
-| Bitcoin + DeFi Smartcontract based accounting and payment system.                                            | testing |
+| Bitcoin + DeFi Smartcontract based accounting and payment system.                                            | in-progress |
 | Account management for KYC/AML regulatory compliance.                                                        | testing |
 | Secrets management and variable templatization.                                                              | testing |
 | Ipfs Reporting and report management API.                                                                     | testing |
@@ -127,12 +127,16 @@ covered using BDD workflow on DamageBDD.
 - General Process Execution orchestration through custom Step implementations.
 - General Behaviour verification based on custom input sources.
 
-* References
+* Links
 
 - [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
 - [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
-- [[./whitepaper.html][Damage Token Whitepaper]]
-- [[https://github.com/jagguli/DamageBDD][DamageBDD Repo]]
-- [[https://www.linkedin.com/company/damagebdd/][DamageBDD Linkedin Page]]
+- [[./whitepaper.html][DAMAGE Token Whitepaper]]
+- [[https://github.com/jagguli/DamageBDD][Project Repo]]
+- [[https://www.linkedin.com/company/damagebdd/][Linkedin Page]]
+- [[https://aescan.io/contracts/ct_m3Cty31JxWHmJFMGuFCTpedDHuMLCit2Qup57qawmEWmcJnCk?type=call-transactions][Explore Token Activity]]
+- [[https://matrix.to/#/#damagebdd:matrix.org][Matrix Channel]]
+- [[https://discord.gg/ZQHnDqAg][Discord]]
+- [[https://snort.social/damagebdd][Nostr]]
 
   
