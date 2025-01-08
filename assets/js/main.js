@@ -57,9 +57,7 @@
 
 		menuItems.forEach(function(item) {
 			var link = item.querySelector("a");
-			console.log("loc " , link.getAttribute("href")); 
-			console.log("path " , window.location.pathname); 
-			if (link.getAttribute("href") === window.location.pathname) {
+			if (link && link.getAttribute("href") === window.location.pathname) {
 				item.classList.add("active"); // Add the "active" class if the href matches the current URL path
 			}
 		});
@@ -78,7 +76,7 @@
 			color2: 0x2d6e45,
 			backgroundColor: 0xffffff
 		})
-		codeInput.registerTemplate(
+		/*codeInput.registerTemplate(
 			"syntax-highlighted",
 			codeInput.templates.hljs(
 				hljs,
@@ -87,7 +85,7 @@
 					new codeInput.plugins.Indent(true, 2) // 2 spaces indentation
 				]
 			)
-		);
+		);*/
 
 	});
 
