@@ -129,14 +129,14 @@ covered using BDD workflow on DamageBDD.
 
 * Links
 
-- [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
-- [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
 - [[./whitepaper.html][DAMAGE Token Whitepaper]]
-- [[https://github.com/jagguli/DamageBDD][Project Repo]]
-- [[https://www.linkedin.com/company/damagebdd/][Linkedin Page]]
 - [[https://aescan.io/contracts/ct_m3Cty31JxWHmJFMGuFCTpedDHuMLCit2Qup57qawmEWmcJnCk?type=call-transactions][Explore Token Activity]]
-- [[https://matrix.to/#/#damagebdd:matrix.org][Matrix Channel]]
 - [[https://discord.gg/ZQHnDqAg][Discord]]
 - [[https://snort.social/damagebdd][Nostr]]
+- [[https://github.com/DamageBDD/DamageBDD][DamageBDD Repo]]
+- [[https://www.linkedin.com/company/damagebdd/][DamageBDD Linkedin Page]]
+- [[https://run.damagebdd.com/api-docs/][DamageBDD API]]
+- [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
+- [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
 
   
