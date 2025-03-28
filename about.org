@@ -38,6 +38,3 @@ it's just a command away!
 
 Welcome to DamageBDD - where simplicity meets power!
 
-DamageBDD is a legally registered business entity in Australia.
-
-ABN: 39865763306.

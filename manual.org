@@ -1,7 +1,11 @@
 #+Title: DamageBDD User Manual: Get Started with Behavior Testing in Minutes!
 
 #+INCLUDE: "header.org"
+
 #+OPTIONS: toc:2      
+#+BEGIN_EXPORT html
+<section id="page1">
+#+END_EXPORT
 
 * Get Started with Behavior Testing in Minutes!
 
@@ -38,17 +42,15 @@ Check your email for a confirmation, then set up a password at the DamageBDD web
     
 ** Get a Bearer Token
 
-Next, you need to get a bearer token by authenticating with DamageBDD:
+Next, you need to get an auth token by authenticating with DamageBDD:
 
 #+BEGIN_EXPORT html
 <pre class='snippet'><code class="language-bash">
 curl -X POST \
-    'https://run.damagebdd.com/auth/' \
+    'https://run.damagebdd.com/accounts/auth/' \
     --json '{
-        "grant_type": "password",
         "username": "your damagebdd username/email",
-        "password": "your damagebdd password",
-        "scope": "basic"
+        "password": "your damagebdd password"
     }'
 </code></pre>
 #+END_EXPORT
@@ -349,3 +351,7 @@ Swagger UI for the REST API can be found [[https://run.damagebdd.com/api-docs/][
 ** WebInterface (experimental)
 
 [[https://run.damagebdd.com][Here]] is the link to the experimental web interface, using curl is the current recommended method.
+
+#+BEGIN_EXPORT html
+</section>
+#+END_EXPORT

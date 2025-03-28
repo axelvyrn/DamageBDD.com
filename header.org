@@ -17,9 +17,6 @@
 #+HTML_HEAD: <script src="https://kit.fontawesome.com/cf1d913439.js" crossorigin="anonymous"></script>
 #+BEGIN_EXPORT html
 <div class="header" >
-<a href="/"><img src="assets/img/damagelogo.svg" alt="Logo" height="130px"/>
-<h1>DamageBDD</h1>
-</a>
 <br>
   <div id='mainmenudiv'>
     <ul id="mainmenu" >
