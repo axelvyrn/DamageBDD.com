@@ -36,6 +36,13 @@
     z-index: 1000;
 }
 body .title { display: none; }
+body {
+     background: linear-gradient(to bottom, rgba(3,75, 82, 1) 0%, rgba(3,75, 82, 0) 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 #preamble{
     width: 100%;
@@ -255,3 +262,10 @@ body.dark h1, body.dark a, body.dark p, body.dark h2 , body.dark ul{
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+#logo{
+    float:left;
+    padding-right:3em;
+    height: 300px;
+
+}
+
