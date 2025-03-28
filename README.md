@@ -21,7 +21,8 @@ emacs --batch \
 with docker 
 
 ```bash
-docker run emacs:latest  --batch \
-      -l ~/Org/damagebdd/publish.el \
-      --eval "(org-publish-project \"damagebdd\" t)"
+docker run --rm -v "$PWD":/project -w /project silex/emacs:latest \
+  emacs --batch \
+  -l /project/publish.el \
+  --eval "(org-publish-project \"damagebdd\" t)"
 ```
