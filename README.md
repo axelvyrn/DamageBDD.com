@@ -14,7 +14,7 @@ cd DamageBDD.com
   
 ```bash
 emacs --batch \
-      -l ~/Org/damagebdd/publish.el \
+      -l publish.el \
       --eval "(org-publish-project \"damagebdd\" t)"
 ```
 

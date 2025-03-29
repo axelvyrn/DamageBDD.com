@@ -68,16 +68,17 @@
                                         ;:sitemap-file-entry-format "%d - %t"
               )
              ("damagebdd.articles"
-              :base-directory "~/Org/damagebdd/articles/"
+              :base-directory ,(expand-file-name "articles" default-directory)
               :base-extension "jpeg\\|pdf"
               :publishing-directory "/var/www/damagebdd.com/articles/"
+              :publishing-directory ,(expand-file-name "public/articles" default-directory)
               :recursive t
               :publishing-function org-publish-attachment
               )
              ("damagebdd.static"
-              :base-directory "~/Org/damagebdd/assets/"
-              :base-extension "css\\|js\\|png\\|jpg\\|jpeg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|ttf\\|map\\|svg\\|woff\\|woff2\\|ico"
-              :publishing-directory "/var/www/damagebdd.com/assets/"
+              :base-directory ,(expand-file-name "assets" default-directory)
+              :base-extension "css\\|js\\|png\\|jpg\\|jpeg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|ttf\\|map\\|svg\\|woff\\|woff2\\|ico\\|avif"
+              :publishing-directory ,(expand-file-name "public/assets" default-directory)
               :recursive t
               :publishing-function org-publish-attachment
               )
