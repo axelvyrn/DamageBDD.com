@@ -87,6 +87,24 @@
 			)
 		);*/
 
+		// Theme toggle functionality
+		const themeToggle = document.getElementById('checkbox');
+		if (themeToggle) {
+			// Check for a saved theme in localStorage
+			if (localStorage.getItem('theme') === 'dark') {
+                            document.body.classList.add('dark');
+                            themeToggle.checked = true;        
+		        }
+		        themeToggle.addEventListener('change', function() {
+			    if (this.checked) {
+			        document.body.classList.add('dark');
+			        localStorage.setItem('theme', 'dark');
+			    } else {			
+		                document.body.classList.remove('dark');			    
+			        localStorage.setItem('theme', 'light');
+                            }
+                        });
+                }
 	});
 
 })(window, document, undefined);
