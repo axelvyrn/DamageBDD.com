@@ -70,7 +70,6 @@
              ("damagebdd.articles"
               :base-directory ,(expand-file-name "articles" default-directory)
               :base-extension "jpeg\\|pdf"
-              :publishing-directory "/var/www/damagebdd.com/articles/"
               :publishing-directory ,(expand-file-name "public/articles" default-directory)
               :recursive t
               :publishing-function org-publish-attachment
