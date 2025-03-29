@@ -1,3 +1,11 @@
+/* CSS */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
 .header h1 {
     font-size: 5em;
 }
@@ -138,12 +146,6 @@ button {
   font-weight: bold;
   color: red;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/assets/js/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
-}
 
 #table-of-contents{
     float: right;
@@ -170,13 +172,6 @@ button {
 }
 
 
-/*#text-table-of-contents > ul > li > a:after {
-  content: 'Damage Tokens';
-  font-size:5em;
-}
-#text-table-of-contents > ul > li > a {
-  font-size:0;
-}*/
 
 #kycForm{
     width: 30em;
@@ -201,22 +196,6 @@ a{
 a:hover {
   text-decoration: underline;
 }
-/*pre {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #55aa00;
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 0.4em 1.5em;
-    display: block;
-    word-wrap: break-word;
-}*/
 
 /* https://codepen.io/Umer_Farooq/pen/eYJgKGN */
 body.dark {background-color: #292c35;} /* #9b59b6 */
