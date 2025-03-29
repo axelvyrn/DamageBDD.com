@@ -2,10 +2,6 @@
 
 	// code that should be taken care of right away
 	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-5QG625RHB7');
 
 	const toasts = new Toasts({
 		offsetX: 20, // 20px
