@@ -3,7 +3,6 @@
 #+HTML_PREAMBLE: <h1> DamageBDD Org</h1> 
 #+HTML_HEAD:  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 #+HTML_HEAD: <script src="/assets/js/three.min.js"></script>
-#+HTML_HEAD: <script src="/assets/js/vanta.globe.min.js"></script>
 #+HTML_HEAD: <script src="/assets/js/toasts.js"></script>
 #+HTML_HEAD: <script src='/assets/js/main.js'></script>
 #+HTML_HEAD: <link rel="stylesheet" href="/assets/inter/inter.css">
