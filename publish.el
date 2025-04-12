@@ -16,7 +16,7 @@
 (defvar damagebdd-html-preamble
   "<div class='preamble'>
         <div class='columns'>
-            <a href='/'><img src='assets/img/logo.avif' id='logo' alt='Logo' /></a>
+            <a href='/'><img src='/assets/img/logo.avif' id='logo' alt='Logo' /></a>
             <h1> DamageBDD</h1>
             <h2>
                 Behaviour Driven Development At Planetary Scale.
