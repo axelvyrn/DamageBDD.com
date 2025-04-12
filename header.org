@@ -20,8 +20,8 @@
         <li ><a href="/manual">Get Started!</a></li>
         <li ><a href="/pricing">Pricing</a></li>
         <li ><a href="/articles">Articles</a></li>
-        <!--<li ><a href="/accounts.html">Accounts</a></li>-->
-        <li ><a href="/about">About</a></li>
+        <li ><a href="/ecai" class="new">ECAI<sup>new</sup></a></li>
+        <li ><a href="https://run.staging.damagebdd.com">Login</a></li>-->
         <li >
     <div>
         <input type="checkbox" class="checkbox" id="checkbox">

@@ -1,11 +1,10 @@
 #+TITLE: DamageBDD - BDD At Planetary Scale.
 
-- {{{timestamp(2025-03-29)}}} [[file:header.org][header]]
+- {{{timestamp(2025-04-07)}}} [[file:index.org][DamageBDD - Behaviour verification at planetary scale.]]
+- {{{timestamp(2025-04-07)}}} [[file:header.org][header]]
 - {{{timestamp(2025-03-29)}}} [[file:checklist.org][🧑💻 Task Submission Checklist - Code Like a Pro 🚀]]
 - {{{timestamp(2025-03-28)}}} [[file:manual.org][DamageBDD User Manual: Get Started with Behavior Testing in Minutes!]]
-- {{{timestamp(2025-03-28)}}} [[file:index.org][DamageBDD - Behaviour verification at planetary scale.]]
 - {{{timestamp(2025-03-27)}}} [[file:about.org][About - DamageBDD]]
-- {{{timestamp(2025-03-01)}}} [[file:ecai.org][ECAI AI by DamageBDD]]
 - {{{timestamp(2025-02-07)}}} [[file:register-individual.org][Individual Registration - DamageBDD]]
 - {{{timestamp(2025-02-07)}}} [[file:accounts.org][Damagebdd - Accounts]]
 - {{{timestamp(2024-10-16)}}} [[file:nostr-verification.org][Nostr Verification]]
@@ -23,6 +22,7 @@
 - {{{timestamp(2024-02-18)}}} [[file:run.org][Damagebdd - Web UI]]
 - {{{timestamp(2023-11-22)}}} [[file:register-business.org][Business Registration - DamageBDD]]
 - *articles/*
+  - {{{timestamp(2025-04-07)}}} [[file:articles/damage_vs_tradition.org][DamageBDD vs Traditional Testing Tools]]
   - {{{timestamp(2025-03-11)}}} [[file:articles/dark_matter.org][dark_matter]]
   - {{{timestamp(2024-12-01)}}} [[file:articles/skeptics_guide.org][The Skeptic's Essential Guide to DamageBDD]]
   - {{{timestamp(2024-11-29)}}} [[file:articles/simplepaymentfeature.org][simplepaymentfeature]]
@@ -42,5 +42,7 @@
   - {{{timestamp(2024-04-17)}}} [[file:articles/usecase_generic.org][usecase_generic]]
   - {{{timestamp(2024-04-01)}}} [[file:articles/quantum_of_verification.org][quantum_of_verification]]
 - *ecai/*
+  - {{{timestamp(2025-04-07)}}} [[file:ecai/index.org][ECAI – The End of Probabilistic AI]]
+  - {{{timestamp(2025-04-07)}}} [[file:ecai/prompt.org][**Bootstrap Prompt for ChatGPT to Teach and Implement ECAI**]]
+  - {{{timestamp(2025-04-07)}}} [[file:ecai/ekef-v0.3.org][ECAI Knowledge Encoding Format (EKEF v0.3)]]
   - {{{timestamp(2025-03-16)}}} [[file:ecai/research.org][research]]
-  - {{{timestamp(2025-03-10)}}} [[file:ecai/prompt.org][prompt]]

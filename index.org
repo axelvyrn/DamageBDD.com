@@ -133,11 +133,12 @@ covered using BDD workflow on DamageBDD.
 - [[./whitepaper.html][DAMAGE Token Whitepaper]]
 - [[https://aescan.io/contracts/ct_m3Cty31JxWHmJFMGuFCTpedDHuMLCit2Qup57qawmEWmcJnCk?type=call-transactions][Explore Token Activity]]
 - [[https://discord.gg/ZQHnDqAg][Discord]]
-- [[https://snort.social/damagebdd][Nostr]]
+- [[https://njump.me/npub14ekwjk8gqjlgdv29u6nnehx63fptkhj5yl2sf8lxykdkm58s937sjw99u8][Nostr]]
 - [[https://github.com/DamageBDD/DamageBDD][DamageBDD Repo]]
 - [[https://www.linkedin.com/company/damagebdd/][DamageBDD Linkedin Page]]
 - [[https://run.damagebdd.com/api-docs/][DamageBDD API]]
 - [[https://youtu.be/T70txXsSxig][Better Smart Contracts with Behaviour-Driven Development]]
 - [[https://medium.com/coinmonks/design-of-smart-contracts-using-bdd-and-cucumber-4533162fc235][Design of Smart contracts using BDD and Cucumber]]
 
+- [[https://bddbooks.com/][Bdd Books]]
   
