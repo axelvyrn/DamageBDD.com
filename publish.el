@@ -89,3 +89,26 @@
            )
 
 
+
+
+(defun publish-and-serve ()
+  "Publish the org project and serve the output directory via simple-httpd."
+  (interactive)
+  ;; Run the org-publish command
+  (org-publish-project "damagebdd" t)
+
+  ;; Add current directory to load-path and require simple-httpd
+  (add-to-list 'load-path
+               (file-name-directory (or load-file-name buffer-file-name default-directory)))
+  (require 'simple-httpd)
+
+  ;; Set the root directory for the web server to the published HTML output
+  (setq httpd-root (expand-file-name "public"))  ;; Change "public" if needed
+
+  ;; Optional: set port (default is 8080)
+  (setq httpd-port 8081)
+
+  ;; Start the server if not already running
+  (unless (process-status "httpd")
+    (message "Starting Emacs web server on http://localhost:8081")
+    (httpd-start)))
