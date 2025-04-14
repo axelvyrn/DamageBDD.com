@@ -10,6 +10,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/humanoid-light.css'>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/main.css'/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href='/assets/css/toast.css'/>
+
 #+HTML_HEAD: <script>hljs.highlightAll();</script>
 #+BEGIN_EXPORT html
 <div class="header" >
@@ -21,7 +22,12 @@
         <li ><a href="/pricing">Pricing</a></li>
         <li ><a href="/articles">Articles</a></li>
         <li ><a href="/socials">Socials</a></li>
-        <li ><a href="/ecai" class="new">ECAI<sup>new</sup></a></li>
+        <li >
+            <a href="/ecai" class="new">
+            ECAI
+            <sup class="new-label">new</sup>
+            </a>
+        </li>
         <li ><a href="https://run.staging.damagebdd.com" target="_blank">Login</a></li>-->
         <li >
     <div>
