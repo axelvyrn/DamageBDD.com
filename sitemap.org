@@ -1,7 +1,8 @@
 #+TITLE: DamageBDD - BDD At Planetary Scale.
 
-- {{{timestamp(2025-04-07)}}} [[file:index.org][DamageBDD - Behaviour verification at planetary scale.]]
-- {{{timestamp(2025-04-07)}}} [[file:header.org][header]]
+- {{{timestamp(2025-04-12)}}} [[file:header.org][header]]
+- {{{timestamp(2025-04-12)}}} [[file:socials.org][Social Media - DamageBDD]]
+- {{{timestamp(2025-04-10)}}} [[file:index.org][DamageBDD - Behaviour verification at planetary scale.]]
 - {{{timestamp(2025-03-29)}}} [[file:checklist.org][🧑💻 Task Submission Checklist - Code Like a Pro 🚀]]
 - {{{timestamp(2025-03-28)}}} [[file:manual.org][DamageBDD User Manual: Get Started with Behavior Testing in Minutes!]]
 - {{{timestamp(2025-03-27)}}} [[file:about.org][About - DamageBDD]]
@@ -21,6 +22,8 @@
 - {{{timestamp(2024-05-05)}}} [[file:todo.org][todo]]
 - {{{timestamp(2024-02-18)}}} [[file:run.org][Damagebdd - Web UI]]
 - {{{timestamp(2023-11-22)}}} [[file:register-business.org][Business Registration - DamageBDD]]
+- *jobs/*
+  - {{{timestamp(2025-04-14)}}} [[file:jobs/index.org][index]]
 - *articles/*
   - {{{timestamp(2025-04-07)}}} [[file:articles/damage_vs_tradition.org][DamageBDD vs Traditional Testing Tools]]
   - {{{timestamp(2025-03-11)}}} [[file:articles/dark_matter.org][dark_matter]]
