@@ -15,7 +15,7 @@ cd DamageBDD.com
 
 ```bash
 emacs -Q --batch \
-      -l publish.el \
+      -l scripts/publish.el \
       --eval "(org-publish-project \"damagebdd\" t)"
 ```
 
@@ -24,7 +24,7 @@ with docker
 ```bash
 docker run --rm -v "$PWD":/project -w /project silex/emacs:latest \
   emacs --batch \
-  -l /project/publish.el \
+  -l /project/scripts/publish.el \
   --eval "(org-publish-project \"damagebdd\" t)"
 ```
 
@@ -32,5 +32,5 @@ docker run --rm -v "$PWD":/project -w /project silex/emacs:latest \
 
 
 ```bash
-emacs -Q --fg-daemon -l publish.el --eval "(publish-and-serve)"
+emacs -Q --fg-daemon -l scripts/publish.el --eval "(publish-and-serve)"
 ```
