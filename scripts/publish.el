@@ -89,6 +89,23 @@
            )
 
 
+(setq org-confirm-babel-evaluate nil
+      org-html-validate-link nil
+      org-export-in-background nil
+      org-export-use-babel nil
+      org-publish-use-timestamps-flag nil
+      org-publish-list-skipped-files nil
+      org-publish-timestamp-directory "~/.org-timestamps/"
+      org-publish-project-alist org-publish-project-alist
+      vc-handled-backends nil)
+
+(setq-default noninteractive-init t
+              inhibit-startup-screen t
+              inhibit-startup-message t)
+
+;; Disable yes/no prompts in batch mode
+(fset 'yes-or-no-p (lambda (&rest args) t))
+(fset 'y-or-n-p (lambda (&rest args) t))
 
 
 (defun publish-and-serve ()

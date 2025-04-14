@@ -11,7 +11,6 @@
 - {{{timestamp(2024-10-16)}}} [[file:nostr-verification.org][Nostr Verification]]
 - {{{timestamp(2024-10-03)}}} [[file:faq.org][FAQ for CTOs & Engineering Managers - DamageBDD]]
 - {{{timestamp(2024-10-02)}}} [[file:samples.org][Samples - DamageBDD]]
-- {{{timestamp(2024-09-08)}}} [[file:job_leadtester.org][Job Ad: Part-Time Lead Senior BDD Testing Professional for DamageBDD]]
 - {{{timestamp(2024-07-29)}}} [[file:token_tos.org][Terms and Conditions for Damage Token Sales]]
 - {{{timestamp(2024-07-15)}}} [[file:pricing.org][Pricing - DamageBDD]]
 - {{{timestamp(2024-05-18)}}} [[file:aimodel.org][aimodel]]

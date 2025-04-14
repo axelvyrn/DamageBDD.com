@@ -1,2 +1,2 @@
 #!/bin/sh
-emacs -Q --fg-daemon -l publish.el --eval "(publish-and-serve)"
+emacs -Q --debug-init --fg-daemon -l scripts/publish.el --eval "(publish-and-serve)"

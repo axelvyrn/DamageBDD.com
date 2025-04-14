@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 PROJECT_NAME="damagebdd"
-PUBLISH_FILE="publish.el"
+PUBLISH_FILE="scripts/publish.el"
 
 # Normalize PWD for Docker on Windows (Git Bash/WSL compatible)
 case "$(uname -s)" in
