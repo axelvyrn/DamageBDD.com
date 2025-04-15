@@ -6,8 +6,8 @@
 
 
 #+BEGIN_EXPORT html
-<div id="nostr-feed">
-</div>
+<div id="nostr-feed"></div>
+
 <script type="module">
     import { initNostrScroll } from '/assets/js/nostr-scroll.js';
 
@@ -16,5 +16,5 @@
       pubkey: ["ae6ce958e804be86b145e6a73cdcda8a42bb5e5427d5049fe6259b6dd0f02c7d"], // your hex pubkey
       limit: 30
     });
-  </script>
+</script>
 #+END_EXPORT
