@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DamageBDD</title>
+  <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --text-light: #111;
+      --bg-dark: #0d1117;
+      --text-dark: #e6edf3;
+      --accent-color: #f0b90b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+      }
+    }
+
+    header {
+      background: var(--accent-color);
+      color: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: #333;
+    }
+
+    .hero-section {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .hero-section video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 20vh;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--accent-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid var(--accent-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    footer {
+      background: #0c0c0c;
+      color: #e0e0e0;
+      padding: 2rem 1rem 0;
+      margin-top: 4rem;
+    }
+
+    footer h3 {
+      color: var(--accent-color);
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      margin: 0.5rem 0;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-light');
+        body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-light');
+      } else {
+        body.classList.add('dark');
+        body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-dark');
+        body.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-dark');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="https://staging.damagebdd.com/assets/img/logo.png" alt="DamageBDD Logo">
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/manual">Get Started!</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/articles">Articles</a>
+      <a href="/socials">Socials</a>
+      <a href="/ecai">ECAI</a>
+      <a href="https://run.staging.damagebdd.com/">Login</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <section class="hero-section">
+    <video autoplay muted loop>
+      <source src="/assets/vid/herovid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-text">
+      <h1>What is DamageBDD?</h1>
+      <p>Behaviour-driven testing powered by humans, paid by Bitcoin.</p>
+    </div>
+  </section>
+
+  <main>
+    <h2>What is DamageBDD?</h2>
+    <p>DamageBDD is a platform that lets anyone – not just programmers – describe how software should behave, using simple sentences. These sentences are written in a format called BDD (Behaviour Driven Development), which turns software testing into a conversation instead of a cryptic task only engineers understand.</p>
+    <p>Think of it like writing instructions for how an app should work, and DamageBDD automatically checks if the app really does that. This makes it possible for teams of all skill levels – developers, testers, support staff, even end users – to work together and catch problems before they reach the real world.</p>
+
+    <h2>Why is it powerful?</h2>
+    <ul>
+      <li>Uses plain language to define tests</li>
+      <li>Works across technical and non-technical teams</li>
+      <li>Can simulate massive user activity to test performance</li>
+      <li>Works automatically inside CI/CD systems</li>
+      <li>Can detect performance issues before they go live</li>
+      <li>Enables Bitcoin-based payments for verified contributions</li>
+    </ul>
+
+    <h2>Example</h2>
+    <pre style = "background-color: lightseagreen; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    Feature: Test echo json functionality of JsonTest.com using HTTP API
+    Scenario: GET request to JsonTest.com
+    Given I am using server "http://echo.jsontest.com"
+    When I make a GET request to "/key/value/one/two"
+    Then the json at path "$.one" must be "one"
+    </pre>
+
+    <h2>Business Use Cases</h2>
+    <ul>
+      <li>Web & Mobile Apps: Monitor uptime, load, and functionality</li>
+      <li>Smart Contracts (Web3): Continuously audit decentralized apps</li>
+      <li>Enterprise Systems: Automate QA and compliance checks</li>
+      <li>Infrastructure Teams: Track service availability and performance</li>
+      <li>Product Teams: Capture feature requests and real-world usage</li>
+      <li>AI & Bots: Autogenerate tests and verify their own behavior</li>
+    </ul>
+
+    <h2>Revenue Streams</h2>
+    <ul>
+      <li>🟠 Pay-per-Test: Users pay in Bitcoin or DAMAGE tokens to run tests at scale</li>
+      <li>🟢 Bug Bounties: Token rewards for contributors who define useful tests</li>
+      <li>🔵 DeFi Integration: Smart contracts trigger payments only when conditions are verified</li>
+      <li>🟡 Verification-as-a-Service: Enterprises pay for automated third-party verification</li>
+      <li>🟣 Token-Governed Test Market: A decentralized ecosystem where testers and developers collaborate, get paid, and build trust</li>
+    </ul>
+
+    <h2>Target User Roles</h2>
+    <table>
+      <tr><th>Role</th><th>Use Case</th></tr>
+      <tr><td>End User</td><td>initial requirements, feature requests, defect reporting</td></tr>
+      <tr><td>Product Support</td><td>feature requests, isolating defect behaviour, edge cases, monitoring, alerting</td></tr>
+      <tr><td>QA</td><td>define expected behaviours, continuous monitoring, reporting, alerts</td></tr>
+      <tr><td>Infra</td><td>availability monitoring, endpoint latency reporting, alerts</td></tr>
+      <tr><td>Development</td><td>prototyping, maintenance, verification, continous monitoring</td></tr>
+      <tr><td>Management</td><td>project velocity, current progress, performance metrics, fund allocation</td></tr>
+    </table>
+
+    <h2>Feature Highlights</h2>
+    <table>
+      <tr><th>DamageBDD Feature</th><th>Status</th></tr>
+      <tr><td>REST API for test execution</td><td>✅ Done</td></tr>
+      <tr><td>Scheduled testing, continuous testing config</td><td>🧪 Testing</td></tr>
+      <tr><td>Bitcoin & DeFi payment system</td><td>🔨 In progress</td></tr>
+      <tr><td>Secrets management and variable templates</td><td>🧪 Testing</td></tr>
+      <tr><td>CI/CD integration and monitoring</td><td>🧪 Testing</td></tr>
+      <tr><td>AI-generated tests and code suggestions</td><td>🧠 In analysis</td></tr>
+      <tr><td>Appium and Selenium browser/mobile testing</td><td>🧪 Testing</td></tr>
+      <tr><td>IPFS reports, dashboards, alerts</td><td>🧪 Testing</td></tr>
+      <tr><td>Webhook triggers</td><td>⚙️ In progress</td></tr>
+      <tr><td>Zero Knowledge Proof test validation & payouts</td><td>🔍 Researching</td></tr>
+      <tr><td>DAMAGE Token governance and test ecosystem incentives</td><td>🪙 In analysis</td></tr>
+    </table>
+
+    <h2>Why DamageBDD is Unique</h2>
+    <ul>
+      <li>🧠 Human-readable testing</li>
+      <li>🚀 Planetary-scale automation</li>
+      <li>⚡ Bitcoin-native monetization</li>
+      <li>🕵️ Verifiable trust in every test</li>
+      <li>🤝 Open contribution and collaboration</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div style="max-width: 1200px; margin: auto; padding: 3rem 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;">
+      <div>
+        <h3>About</h3>
+        <ul>
+          <li>What is DamageBDD?</li>
+          <li>How it Works</li>
+          <li>Case Studies</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Features</h3>
+        <ul>
+          <li>Real-time Testing</li>
+          <li>CI/CD Integration</li>
+          <li>Bitcoin Payments</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li>GitHub</li>
+          <li>Docs</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li>Terms</li>
+          <li>Privacy</li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--accent-color); padding: 1.5rem 1rem; text-align: center;">
+      <p>&copy; Copyright 2024 Steven Joseph (HTML).</p>
+      <p>Last updated 2025-04-14 Mon 13:25.</p>
+      <p>Built with ♥ by DamageBDD using Emacs 30.1 (Org mode 9.7.11) Sitemap About</p>
+    </div>
+  </footer>
+</body>
+</html>

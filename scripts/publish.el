@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-htmlize")
+(require 'htmlize)
 (defun org-sitemap-date-entry-format (entry style project)
   "Format ENTRY in org-publish PROJECT Sitemap format ENTRY ENTRY STYLE format that includes date."
   (let ((filename (org-publish-find-title entry project)))
